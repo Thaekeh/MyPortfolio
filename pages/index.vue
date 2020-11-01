@@ -1,0 +1,268 @@
+<template>
+  <v-container fill-height fluid>
+    <v-row justify="center" align="center" id="mainRow">
+      <v-col cols="3">
+
+      </v-col>
+      <v-col cols="6" xs="12" sm="6" md="6">
+        <v-row justify="center" class="text-center">
+          <v-col cols="12">
+            <h1 id="mainTitle">Hey there!</h1>
+            <h2 id="subTitle">I'm Thaeke, and I'm a front-end developer.</h2>
+            <v-btn text large id="learnMore" href="#work">
+              Check Out My Work
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="3">
+        Hello
+      </v-col>
+    </v-row>
+
+    <!-- My Work Title -->
+    <v-row
+      justify="center"
+      id="workTitle"
+      :style="{
+        marginTop: this.$vuetify.breakpoint.xs ? '40vh' : '55vh',
+        marginBottom: '30px',
+      }"
+    >
+      <h1 id="work">My Work</h1>
+    </v-row>
+
+    <v-row justify="center" align="center">
+      <v-col xs="12" sm="12" md="10" id="itemColumn">
+        <v-card id="greatCard">
+          <v-row>
+            <v-col xs="12" sm="6" md="6" id="inlayColumn">
+              <!-- <v-card color="primary" class="primary" id="inlayCard" height="100%"
+                >
+                <v-img src="brainLogoExample.png" height="100%" width="100%"></v-img
+              ></v-card> -->
+              <v-card color="#2878EA" id="inlayCard" height="100%">
+                <v-container fluid fill-height>
+                  <v-col cols="12">
+                    <v-img
+                      src="brainLogoExample-Cropped.png"
+                      id="inlayImage"
+                    ></v-img>
+                  </v-col>
+                </v-container>
+              </v-card>
+            </v-col>
+
+            <v-col xs="6" sm="6" md="6">
+              <v-card-title
+                class="justify-center"
+                :style="{ fontSize: fontSize + 'px' }"
+                >A webapp for autodidacts</v-card-title
+              >
+              <v-card-text class="text-center">
+                <v-row>
+                  <v-col xs="12" sm="10" md="8" id="cardTextCol" :style="{ fontSize: (fontSize * 0.7) + 'px' }">
+                    Learn anything you want by reading and quickly adding
+                    difficult words to your flashcards.
+                  </v-col>
+                </v-row>
+                <v-col cols="12" id="techStack">
+                  <h2>Tech Stack</h2>
+                  <v-row id="techStackLogos">
+                    <v-col xs="6" sm="6" md="3">
+                      <img src="vuetify-logo.svg" alt="Vuetify" height="50px" />
+                      <!-- <v-avatar>
+                      <img src="vuetify-logo.svg" alt="Vuetify">
+                    </v-avatar> -->
+                      <p>Vuetify</p>
+                    </v-col>
+                    <v-col xs="6" sm="6" md="3">
+                      <img src="vueLogo.jpeg" alt="Vue.js" height="50px" />
+                      <p>Vue.js</p>
+                    </v-col>
+                    <v-col xs="6" sm="6" md="3">
+                      <img src="nuxtjs.png" alt="Vuetify" height="50px" />
+                      <p>Vuetify</p>
+                    </v-col>
+                    <v-col xs="6" sm="6" md="3">
+                      <img src="pwaLogo.png" alt="PWA" height="50px" />
+                      <p>PWA</p>
+                    </v-col>
+                  </v-row>
+
+                  <v-card-actions class="justify-center" id="cardActions">
+                    <v-btn text outlined> Learn More</v-btn>
+                    <v-btn
+                      text
+                      href="https://www.trainthatbrain.app/"
+                      target="_blank"
+                      >Visit Site</v-btn
+                    >
+                  </v-card-actions>
+                </v-col>
+              </v-card-text>
+            </v-col>
+          </v-row>
+        </v-card>
+        <!-- About Me Title -->
+        <v-row justify="center" id="aboutTitle">
+          <h1 id="about">About Me</h1>
+        </v-row>
+        <v-row justify="center">
+          <v-col xs="6" sm="6" md="10">
+            <v-card>
+              <v-card-title class="justify-center"> Who am I? </v-card-title>
+              <v-card-text class="text-center">
+                A quick overview.
+                <v-row justify="center">
+                  <v-col cols="10">
+                    <v-timeline>
+                      <v-timeline-item color="blue" small fill-dot>
+                        <template v-slot:opposite>
+                          <span>25th of October 1997</span>
+                        </template>
+                        <div class="py-4">
+                          <h2 class="headline font-weight-light mb-4">
+                            Lorem ipsum
+                          </h2>
+                          <div>
+                            Lorem ipsum dolor sit amet, no nam oblique veritus.
+                            Commune scaevola imperdiet nec ut, sed euismod
+                            convenire principes at. Est et nobis iisque
+                            percipit, an vim zril disputando voluptatibus, vix
+                            an salutandi sententiae.
+                          </div>
+                        </div>
+                      </v-timeline-item>
+                      <v-timeline-item color="secondary" fill-dot small>
+                        <template v-slot:opposite>
+                          <span>25th of October 1997</span>
+                        </template>
+                        Started studying Automotive when I was
+                        17</v-timeline-item
+                      >
+                      <v-timeline-item color="secondary" fill-dot small>
+                        <template v-slot:opposite>
+                          <span>25th of October 1997</span>
+                        </template>
+                        Started dating a weird girl with a lot of mosquito
+                        bites</v-timeline-item
+                      >
+                    </v-timeline>
+                  </v-col>
+                </v-row>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+        <v-row justify="center" id="contactTitle">
+          <h1 id="contact">Contact Me</h1>
+        </v-row>
+        <v-row justify="center">
+          <v-col xs="6" sm="6" md="10">
+            <v-card>
+              <v-row justify="center">
+                <v-col xs="10" sm="6" md="4">
+                  <v-form id="contactForm">
+                    <v-text-field label="Name"></v-text-field>
+                  </v-form>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+export default {
+  computed: {
+    fontSize() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return 18
+        case 'sm':
+          return 19
+        case 'md':
+          return 22
+        case 'lg':
+          return 26
+        case 'xl':
+          return 30
+      }
+    },
+    smallScreen() {
+      if (this.$vuetify.breakpoint.name == 'xs') {
+        return true
+      }
+    },
+  },
+}
+</script>
+
+<style lang="sass" scoped>
+#mainRow
+  margin-top: 15vh
+
+#mainTitle
+  font-size: 3rem
+  font-weight: 500
+
+#subTitle
+  font-size: 2rem
+  font-weight: 400
+
+#learnMore
+  margin-top: 40px
+
+#outlinedButtonText
+  font-size: 1.5rem
+  padding-top: 50px
+
+#introCard
+  border-radius: 50px
+
+.hoverCard
+  transition: opacity .4s ease-in-out
+
+#hoverCard
+  border-radius: 20px
+  cursor: pointer
+#greatCard
+  border-radius: 30px
+  padding: 0
+
+#itemColumn
+  padding: 0
+
+#inlayColumn
+  padding: 0
+
+#inlayCard
+  border-radius: 30px
+
+#inlayImage
+  border-radius: 30px
+  margin-top: auto
+  margin-bottom: auto
+
+#cardTextCol
+  margin: auto
+
+.underlinedBottom
+  text-decoration: underline
+
+#aboutTitle
+  margin-top: 100px
+
+#cardActions
+  margin-top: 30px
+
+#techStack
+  margin-top: 50px
+
+#techStackLogos
+  margin-top: 30px
+</style>
