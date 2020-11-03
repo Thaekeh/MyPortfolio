@@ -1,7 +1,7 @@
 ---
 title: Train That Brain
 description: A learning app for autodidacts
-img: logoScreenshot-cropped.png
+img: '@/static/logoScreenshot-cropped.png'
 ---
 ### Why Train That Brain?
 <br>

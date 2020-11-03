@@ -1,38 +1,123 @@
 <template>
   <v-container fill-height fluid id="container">
-    <v-row justify="center" align="center" id="mainRow">
-      <v-card class="techCard hidden-sm-and-down" rounded id="vuetifyCard" hover>
+    <v-row justify="center" align="center" id="mainRow" >
+      <v-card
+        class="techCard hidden-sm-and-down animate__animated animate__bounce"
+        rounded
+        id="vuetifyCard"
+        hover
+        v-anime="{
+          translateY: 100,
+          opacity: 1,
+          duration: 2000,
+          delay: 1000,
+          loop: false,
+        }"
+      >
         <v-row class="techCardRow">
-        <img src="vuetify-logo.svg" alt="Vuetify" height="50px" class="techCardImage" />
-        <h1>Vuetify</h1>
+          <img
+            src="vuetify-logo.svg"
+            alt="Vuetify"
+            height="50px"
+            class="techCardImage"
+          />
+          <h1>Vuetify</h1>
         </v-row>
       </v-card>
-      <v-card class="techCard hidden-sm-and-down" rounded id="vueCard" hover>
+      <v-card
+        class="techCard hidden-sm-and-down"
+        rounded
+        id="vueCard"
+        hover
+        v-anime="{
+          translateY: 100,
+          opacity: 1,
+          duration: 2000,
+          delay: 1000,
+          loop: false,
+        }"
+      >
         <v-row class="techCardRow">
-        <img src="vueLogo.jpeg" alt="Vue" height="50px" class="techCardImage" />
-        <h1>Vue.js</h1>
+          <img
+            src="vueLogo.jpeg"
+            alt="Vue"
+            height="50px"
+            class="techCardImage"
+          />
+          <h1>Vue.js</h1>
         </v-row>
       </v-card>
-      <v-card class="techCard hidden-sm-and-down" rounded id="firebaseCard" hover>
+      <v-card
+        class="techCard hidden-sm-and-down"
+        rounded
+        id="firebaseCard"
+        hover
+        v-anime="{
+          translateY: 100,
+          opacity: 1,
+          duration: 2000,
+          delay: 1000,
+          loop: false,
+        }"
+      >
         <v-row class="techCardRow">
-        <img src="firebaseLogo.png" alt="Firebase" height="50px" class="techCardImage" />
-        <h1>Firebase</h1>
+          <img
+            src="firebaseLogo.png"
+            alt="Firebase"
+            height="50px"
+            class="techCardImage"
+          />
+          <h1>Firebase</h1>
         </v-row>
       </v-card>
-      <v-card class="techCard hidden-sm-and-down" rounded id="nuxtCard" hover>
+      <v-card
+        class="techCard hidden-sm-and-down"
+        rounded
+        id="nuxtCard"
+        hover
+        v-anime="{
+          translateY: 100,
+          opacity: 1,
+          duration: 2000,
+          delay: 1000,
+          loop: false,
+        }"
+      >
         <v-row class="techCardRow">
-        <img src="nuxtjs.png" alt="Nuxt.js" height="50px" class="techCardImage" />
-        <h1>Nuxt.js</h1>
+          <img
+            src="nuxtjs.png"
+            alt="Nuxt.js"
+            height="50px"
+            class="techCardImage"
+          />
+          <h1>Nuxt.js</h1>
         </v-row>
       </v-card>
-      <v-card class="techCard hidden-sm-and-down" rounded id="netlifyCard" hover>
+      <v-card
+        class="techCard hidden-sm-and-down"
+        rounded
+        id="netlifyCard"
+        hover
+        v-anime="{
+          translateY: 100,
+          opacity: 1,
+          duration: 2000,
+          delay: 1000,
+          loop: false,
+        }"
+      >
         <v-row class="techCardRow">
-        <img src="netlifyLogo.png" alt="Nuxt.js" height="50px" class="techCardImage" />
-        <h1>Netlify</h1>
+          <img
+            src="netlifyLogo.png"
+            alt="Nuxt.js"
+            height="50px"
+            class="techCardImage"
+          />
+          <h1>Netlify</h1>
         </v-row>
       </v-card>
       <!-- <v-col cols="3" xs="0"></v-col> -->
-      <v-col cols="12" xs="12" sm="6" md="6">
+      <v-col cols="12" xs="12" sm="6" md="6" v-anime="{ translateY: 100, opacity: 1, duration: 2000, delay: 1000, loop: false }">
         <v-row justify="center" class="text-center">
           <v-col cols="12">
             <h1 id="mainTitle">Hey there!</h1>
@@ -124,7 +209,9 @@
                   </v-row>
 
                   <v-card-actions class="justify-center" id="cardActions">
-                    <v-btn text outlined href="/trainthatbrain"> Learn More</v-btn>
+                    <v-btn text outlined href="/trainthatbrain">
+                      Learn More</v-btn
+                    >
                     <v-btn
                       text
                       href="https://www.trainthatbrain.app/"
@@ -240,6 +327,12 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.bounceInUp-enter-active
+  animation: bounceInUp .8s
+
+.bounceInUp-leave-active
+  animation: bounceInUp .5s
+
 #mainRow
   margin-top: 15vh
 
@@ -315,26 +408,31 @@ export default {
 
 #firebaseCard
   left: 10vw
-  top: 45vh
+  top: 35vh
+  opacity: 0
 
 #netlifyCard
   right: 10vw
-  top: 45vh
+  top: 35vh
+  opacity: 0
 
 #vuetifyCard
-  top: 60vh
+  top: 50vh
   left: 25vw
+  opacity: 0
 
 #nuxtCard
   right: 25vw
-  top: 60vh
+  top: 50vh
+  opacity: 0
 
 #vueCard
-  top: 75vh
+  top: 65vh
+  opacity: 0
 
 #work
   margin-top: 150px
 
 #about
-  margin-top: 160px  
+  margin-top: 160px
 </style>
