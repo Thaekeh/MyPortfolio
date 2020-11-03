@@ -29,6 +29,9 @@
 
 <script>
 export default {
+  head: {
+    title: 'Projects'
+  },
   async asyncData({ $content, params, error }) {
     const slug = params.slug || 'index'
     const page = await $content('projects', slug)

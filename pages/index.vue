@@ -117,7 +117,7 @@
         </v-row>
       </v-card>
       <!-- <v-col cols="3" xs="0"></v-col> -->
-      <v-col cols="12" xs="12" sm="6" md="6" v-anime="{ translateY: 100, opacity: 1, duration: 2000, delay: 1000, loop: false }">
+      <v-col cols="12" xs="12" sm="6" md="6" v-anime="{ translateY: 100, opacity: 1, duration: 2000, delay: 1000, loop: false }" id="introText">
         <v-row justify="center" class="text-center">
           <v-col cols="12">
             <h1 id="mainTitle">Hey there!</h1>
@@ -302,6 +302,9 @@
 
 <script>
 export default {
+  head: {
+    title: 'Home'
+  },
   computed: {
     fontSize() {
       switch (this.$vuetify.breakpoint.name) {
@@ -353,6 +356,9 @@ export default {
 
 #introCard
   border-radius: 50px
+
+#introText
+  opacity: 0
 
 .hoverCard
   transition: opacity .4s ease-in-out
