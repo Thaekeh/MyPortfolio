@@ -1,23 +1,50 @@
 <template>
-  <v-container fill-height fluid>
+  <v-container fill-height fluid id="container">
     <v-row justify="center" align="center" id="mainRow">
-      <v-col cols="3">
-
-      </v-col>
-      <v-col cols="6" xs="12" sm="6" md="6">
+      <v-card class="techCard hidden-sm-and-down" rounded id="vuetifyCard" hover>
+        <v-row class="techCardRow">
+        <img src="vuetify-logo.svg" alt="Vuetify" height="50px" class="techCardImage" />
+        <h1>Vuetify</h1>
+        </v-row>
+      </v-card>
+      <v-card class="techCard hidden-sm-and-down" rounded id="vueCard" hover>
+        <v-row class="techCardRow">
+        <img src="vueLogo.jpeg" alt="Vue" height="50px" class="techCardImage" />
+        <h1>Vue.js</h1>
+        </v-row>
+      </v-card>
+      <v-card class="techCard hidden-sm-and-down" rounded id="firebaseCard" hover>
+        <v-row class="techCardRow">
+        <img src="firebaseLogo.png" alt="Firebase" height="50px" class="techCardImage" />
+        <h1>Firebase</h1>
+        </v-row>
+      </v-card>
+      <v-card class="techCard hidden-sm-and-down" rounded id="nuxtCard" hover>
+        <v-row class="techCardRow">
+        <img src="nuxtjs.png" alt="Nuxt.js" height="50px" class="techCardImage" />
+        <h1>Nuxt.js</h1>
+        </v-row>
+      </v-card>
+      <v-card class="techCard hidden-sm-and-down" rounded id="netlifyCard" hover>
+        <v-row class="techCardRow">
+        <img src="netlifyLogo.png" alt="Nuxt.js" height="50px" class="techCardImage" />
+        <h1>Netlify</h1>
+        </v-row>
+      </v-card>
+      <!-- <v-col cols="3" xs="0"></v-col> -->
+      <v-col cols="12" xs="12" sm="6" md="6">
         <v-row justify="center" class="text-center">
           <v-col cols="12">
             <h1 id="mainTitle">Hey there!</h1>
             <h2 id="subTitle">I'm Thaeke, and I'm a front-end developer.</h2>
+            <h2><a href="#work" id="link">Test this</a></h2>
             <v-btn text large id="learnMore" href="#work">
               Check Out My Work
             </v-btn>
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="3">
-        Hello
-      </v-col>
+      <!-- <v-col cols="3" xs="0"> </v-col> -->
     </v-row>
 
     <!-- My Work Title -->
@@ -34,7 +61,7 @@
 
     <v-row justify="center" align="center">
       <v-col xs="12" sm="12" md="10" id="itemColumn">
-        <v-card id="greatCard">
+        <v-card id="greatCard" hover>
           <v-row>
             <v-col xs="12" sm="6" md="6" id="inlayColumn">
               <!-- <v-card color="primary" class="primary" id="inlayCard" height="100%"
@@ -61,7 +88,13 @@
               >
               <v-card-text class="text-center">
                 <v-row>
-                  <v-col xs="12" sm="10" md="8" id="cardTextCol" :style="{ fontSize: (fontSize * 0.7) + 'px' }">
+                  <v-col
+                    xs="12"
+                    sm="10"
+                    md="8"
+                    id="cardTextCol"
+                    :style="{ fontSize: fontSize * 0.7 + 'px' }"
+                  >
                     Learn anything you want by reading and quickly adding
                     difficult words to your flashcards.
                   </v-col>
@@ -91,7 +124,7 @@
                   </v-row>
 
                   <v-card-actions class="justify-center" id="cardActions">
-                    <v-btn text outlined> Learn More</v-btn>
+                    <v-btn text outlined href="/trainthatbrain"> Learn More</v-btn>
                     <v-btn
                       text
                       href="https://www.trainthatbrain.app/"
@@ -104,12 +137,13 @@
             </v-col>
           </v-row>
         </v-card>
+
         <!-- About Me Title -->
         <v-row justify="center" id="aboutTitle">
           <h1 id="about">About Me</h1>
         </v-row>
         <v-row justify="center">
-          <v-col xs="6" sm="6" md="10">
+          <v-col xs="6" sm="8" md="10">
             <v-card>
               <v-card-title class="justify-center"> Who am I? </v-card-title>
               <v-card-text class="text-center">
@@ -159,12 +193,15 @@
           <h1 id="contact">Contact Me</h1>
         </v-row>
         <v-row justify="center">
-          <v-col xs="6" sm="6" md="10">
+          <v-col xs="8" sm="6" md="10">
             <v-card>
               <v-row justify="center">
-                <v-col xs="10" sm="6" md="4">
+                <v-col xs="10" sm="6" md="6">
+                  <h2>Send me a message!</h2>
                   <v-form id="contactForm">
                     <v-text-field label="Name"></v-text-field>
+                    <v-textarea label="Content"></v-textarea>
+                    <v-btn text>Send</v-btn>
                   </v-form>
                 </v-col>
               </v-row>
@@ -184,7 +221,7 @@ export default {
         case 'xs':
           return 18
         case 'sm':
-          return 19
+          return 17
         case 'md':
           return 22
         case 'lg':
@@ -265,4 +302,39 @@ export default {
 
 #techStackLogos
   margin-top: 30px
+
+.techCard
+  position: absolute
+  display: flex
+
+.techCardRow
+  padding: 20px 30px 20px 30px
+
+.techCardImage
+  margin-right: 30px
+
+#firebaseCard
+  left: 10vw
+  top: 45vh
+
+#netlifyCard
+  right: 10vw
+  top: 45vh
+
+#vuetifyCard
+  top: 60vh
+  left: 25vw
+
+#nuxtCard
+  right: 25vw
+  top: 60vh
+
+#vueCard
+  top: 75vh
+
+#work
+  margin-top: 150px
+
+#about
+  margin-top: 160px  
 </style>
