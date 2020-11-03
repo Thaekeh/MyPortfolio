@@ -1,6 +1,6 @@
 <template>
   <v-container fill-height fluid id="container">
-    <v-row justify="center" align="center" id="mainRow" >
+    <v-row justify="center" align="center" id="home">
       <v-card
         class="techCard hidden-sm-and-down animate__animated animate__bounce"
         rounded
@@ -8,7 +8,7 @@
         hover
         v-anime="{
           translateY: 100,
-          opacity: 1,
+          opacity: [0, 1],
           duration: 2000,
           delay: 1000,
           loop: false,
@@ -31,7 +31,7 @@
         hover
         v-anime="{
           translateY: 100,
-          opacity: 1,
+          opacity: [0, 1],
           duration: 2000,
           delay: 1000,
           loop: false,
@@ -54,7 +54,7 @@
         hover
         v-anime="{
           translateY: 100,
-          opacity: 1,
+          opacity: [0, 1],
           duration: 2000,
           delay: 1000,
           loop: false,
@@ -77,7 +77,7 @@
         hover
         v-anime="{
           translateY: 100,
-          opacity: 1,
+          opacity: [0, 1],
           duration: 2000,
           delay: 1000,
           loop: false,
@@ -100,7 +100,7 @@
         hover
         v-anime="{
           translateY: 100,
-          opacity: 1,
+          opacity: [0, 1],
           duration: 2000,
           delay: 1000,
           loop: false,
@@ -117,13 +117,25 @@
         </v-row>
       </v-card>
       <!-- <v-col cols="3" xs="0"></v-col> -->
-      <v-col cols="12" xs="12" sm="6" md="6" v-anime="{ translateY: 100, opacity: 1, duration: 2000, delay: 1000, loop: false }" id="introText">
+      <v-col
+        cols="12"
+        xs="12"
+        sm="6"
+        md="6"
+        v-anime="{
+          translateY: 100,
+          opacity: 1,
+          duration: 2000,
+          delay: 1000,
+          loop: false,
+        }"
+        id="introText"
+      >
         <v-row justify="center" class="text-center">
           <v-col cols="12">
             <h1 id="mainTitle">Hey there!</h1>
             <h2 id="subTitle">I'm Thaeke, and I'm a front-end developer.</h2>
-            <h2><a href="#work" id="link">Test this</a></h2>
-            <v-btn text large id="learnMore" href="#work">
+            <v-btn text large id="learnMore" @click="goTo('work')">
               Check Out My Work
             </v-btn>
           </v-col>
@@ -137,7 +149,7 @@
       justify="center"
       id="workTitle"
       :style="{
-        marginTop: this.$vuetify.breakpoint.xs ? '40vh' : '55vh',
+        marginTop: this.$vuetify.breakpoint.xs ? '30vh' : '55vh',
         marginBottom: '30px',
       }"
     >
@@ -167,7 +179,7 @@
 
             <v-col xs="6" sm="6" md="6">
               <v-card-title
-                class="justify-center"
+                class="justify-center projectCardTitle"
                 :style="{ fontSize: fontSize + 'px' }"
                 >A webapp for autodidacts</v-card-title
               >
@@ -303,7 +315,7 @@
 <script>
 export default {
   head: {
-    title: 'Home'
+    title: 'Home',
   },
   computed: {
     fontSize() {
@@ -326,6 +338,16 @@ export default {
       }
     },
   },
+  methods: {
+    goTo(goal) {
+      if (!this.$route.params.slug) {
+        this.$router.push('#' + goal)
+      } else {
+        this.$router.push({ path: `/#${goal}` })
+      }
+      this.drawer = false
+    },
+  },
 }
 </script>
 
@@ -336,7 +358,7 @@ export default {
 .bounceInUp-leave-active
   animation: bounceInUp .5s
 
-#mainRow
+#home
   margin-top: 15vh
 
 #mainTitle
@@ -415,30 +437,31 @@ export default {
 #firebaseCard
   left: 10vw
   top: 35vh
-  opacity: 0
 
 #netlifyCard
   right: 10vw
   top: 35vh
-  opacity: 0
 
 #vuetifyCard
   top: 50vh
   left: 25vw
-  opacity: 0
 
 #nuxtCard
   right: 25vw
   top: 50vh
-  opacity: 0
 
 #vueCard
   top: 65vh
-  opacity: 0
 
 #work
   margin-top: 150px
 
 #about
   margin-top: 160px
+
+#contact
+  margin-top: 160px
+
+.projectCardTitle
+  font-weight: 600
 </style>
