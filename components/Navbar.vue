@@ -1,17 +1,28 @@
 <template>
   <v-container>
-    <v-app-bar fixed app color="#FEFAF6" elevate-on-scroll id="navbar" v-anime="{
-          opacity: 1,
-          duration: 2000,
-          delay: 1000,
-          loop: false,
-        }">
-      <v-toolbar-title id="toolbarTitle" @click="goTo('home')">Thaeke Hekkenberg</v-toolbar-title>
+    <v-app-bar
+      fixed
+      app
+      color="#FEFAF6"
+      elevate-on-scroll
+      id="navbar"
+      v-anime="{
+        opacity: 1,
+        duration: 2000,
+        delay: 1000,
+        loop: false,
+      }"
+    >
+      <v-toolbar-title id="toolbarTitle" @click="goTo('top')"
+        >Thaeke Hekkenberg</v-toolbar-title
+      >
       <v-spacer></v-spacer>
       <span class="hidden-sm-and-down">
-        <v-btn text class="navbarLink"  @click="goTo('work')"> Work </v-btn>
-        <v-btn text class="navbarLink"  @click="goTo('about')"> About Me </v-btn>
-        <v-btn text class="navbarLink" @click="goTo('contact')"> Contact </v-btn>
+        <v-btn text class="navbarLink" @click="goTo('work')"> Work </v-btn>
+        <v-btn text class="navbarLink" @click="goTo('about')"> About Me </v-btn>
+        <v-btn text class="navbarLink" @click="goTo('contact')">
+          Contact
+        </v-btn>
       </span>
       <v-app-bar-nav-icon
         @click="drawer = !drawer"
@@ -29,13 +40,10 @@
         <v-list-item class="menuListItem" @click="goTo('contact')">
           Contact
         </v-list-item>
-        <v-list-item class="menuListItem">
-        </v-list-item>
+        <v-list-item class="menuListItem"> </v-list-item>
         <v-list-item class="menuListItem">
           <v-btn icon @click="drawer = !drawer">
-            <v-icon>
-              mdi-close
-            </v-icon>
+            <v-icon> mdi-close </v-icon>
           </v-btn>
         </v-list-item>
       </v-list>
@@ -78,11 +86,11 @@ export default {
       if (!this.$route.params.slug) {
         this.$router.push('#' + goal)
       } else {
-        this.$router.push({path: `/#${goal}`})
+        this.$router.push({ path: `/#${goal}` })
       }
       this.drawer = false
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height fluid id="container">
+  <v-container fill-height fluid>
     <v-row justify="center" align="center" id="home">
       <v-card
         class="techCard hidden-sm-and-down animate__animated animate__bounce"
@@ -8,7 +8,7 @@
         hover
         v-anime="{
           translateY: 100,
-          opacity: [0, 1],
+          opacity: 1,
           duration: 2000,
           delay: 1000,
           loop: false,
@@ -31,7 +31,7 @@
         hover
         v-anime="{
           translateY: 100,
-          opacity: [0, 1],
+          opacity: 1,
           duration: 2000,
           delay: 1000,
           loop: false,
@@ -54,7 +54,7 @@
         hover
         v-anime="{
           translateY: 100,
-          opacity: [0, 1],
+          opacity: 1,
           duration: 2000,
           delay: 1000,
           loop: false,
@@ -77,7 +77,7 @@
         hover
         v-anime="{
           translateY: 100,
-          opacity: [0, 1],
+          opacity: 1,
           duration: 2000,
           delay: 1000,
           loop: false,
@@ -100,7 +100,7 @@
         hover
         v-anime="{
           translateY: 100,
-          opacity: [0, 1],
+          opacity: 1,
           duration: 2000,
           delay: 1000,
           loop: false,
@@ -149,7 +149,7 @@
       justify="center"
       id="workTitle"
       :style="{
-        marginTop: this.$vuetify.breakpoint.xs ? '30vh' : '55vh',
+        marginTop: this.$vuetify.breakpoint.xs ? '20vh' : '40vh',
         marginBottom: '30px',
       }"
     >
@@ -435,23 +435,43 @@ export default {
   margin-right: 30px
 
 #firebaseCard
-  left: 10vw
   top: 35vh
+  opacity: 0
+  @media (max-width: 1400px)
+    left: 2vw
+  @media (min-width: 1400px)
+    left: 10vw
 
 #netlifyCard
   right: 10vw
   top: 35vh
+  opacity: 0
+  @media (max-width: 1400px)
+    right: 2vw
+  @media (min-width: 1400px)
+    right: 10vw
 
 #vuetifyCard
   top: 50vh
-  left: 25vw
+  opacity: 0
+  @media (max-width: 1400px)
+    left: 17vw
+  @media (min-width: 1400px)
+    left: 25vw
+    
 
 #nuxtCard
   right: 25vw
   top: 50vh
+  opacity: 0
+  @media (max-width: 1400px)
+    right: 17vw
+  @media (min-width: 1400px)
+    right: 25vw
 
 #vueCard
   top: 65vh
+  opacity: 0
 
 #work
   margin-top: 150px
