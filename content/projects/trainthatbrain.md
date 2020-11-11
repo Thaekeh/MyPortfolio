@@ -1,7 +1,7 @@
 ---
 title: Train That Brain
 description: A learning app for autodidacts
-img: logoScreenshot-cropped.png
+img: www.thaekeh.com/logoScreenshot-cropped.png
 ---
 ## The Problem
 <br>
