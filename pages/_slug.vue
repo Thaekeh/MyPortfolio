@@ -9,7 +9,7 @@
     <v-row justify="center">
       <v-col xs="12" sm="10" md="8" lg="6">
         <v-card id="imageCard">
-          <v-img :src="page.img"></v-img>
+          <v-img :src="page.img" :alt="page.alt"></v-img>
         </v-card>
       </v-col>
     </v-row>
@@ -18,6 +18,10 @@
         <v-card>
           <v-row justify="center">
             <v-col cols="10">
+              <!-- <li v-for="link of page.toc" :key="link.id">
+                <NuxtLink :to="`#${link.id}`" id="nuxtLink">{{ link.text }}</NuxtLink>
+              </li> -->
+
               <nuxt-content id="content" :document="page" />
             </v-col>
           </v-row>
@@ -30,7 +34,7 @@
 <script>
 export default {
   head: {
-    title: 'Projects'
+    title: 'Projects',
   },
   async asyncData({ $content, params, error }) {
     const slug = params.slug || 'index'
@@ -50,6 +54,9 @@ export default {
 <style lang="sass" scoped>
 #description
   margin-bottom: 20px
+
+#nuxtLink
+  color: black
 
 #contentRow
   // width: 80%

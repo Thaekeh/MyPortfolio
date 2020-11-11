@@ -1,9 +1,10 @@
 ---
 title: Train That Brain
 description: A learning app for autodidacts
-img: www.thaekeh.com/logoScreenshot-cropped.png
+img: nuxtjs.png
+alt: Train That Brain
 ---
-## The Problem
+## What's the Problem
 <br>
 
 In September 2019 I moved to Bilbao in Spain. <br>
