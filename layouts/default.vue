@@ -13,10 +13,6 @@
 import Navbar from '@/components/Navbar'
 
 export default {
-  data() {
-    return {
-    }
-  },
 }
 </script>
 
