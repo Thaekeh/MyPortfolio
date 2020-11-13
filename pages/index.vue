@@ -156,6 +156,14 @@
 
     <v-row justify="center" align="center">
       <v-col xs="12" sm="12" md="10" id="itemColumn">
+        <v-lazy
+        v-model="isActive"
+        :options="{
+          threshold: .5
+        }"
+        min-height="200"
+        transition="fade-transition"
+      >
         <v-card id="greatCard" hover>
           <v-row>
             <v-col xs="12" sm="6" md="6" id="inlayColumn">
@@ -234,6 +242,7 @@
             </v-col>
           </v-row>
         </v-card>
+        </v-lazy>
 
         <!-- About Me Title -->
         <v-row justify="center" id="aboutTitle">
@@ -288,7 +297,7 @@
               </v-card-title>
               <v-row justify="center">
                 <v-col xs="10" sm="6" md="6">
-                  <v-form id="contactForm">
+                  <v-form id="contactForm" @submit.prevent="sendEmail">
                     <v-text-field name="name" label="Name" v-model="name"></v-text-field>
                     <v-text-field name="email" label="Email" v-model="email"></v-text-field>
                     <v-textarea name="message" label="Message" v-model="message"></v-textarea>
@@ -359,7 +368,7 @@ export default {
     },
     sendEmail(e) {
       try {
-        emailjs.sendForm('service_duzp5pe', 'template_rscdv8g', e.target,
+        emailjs.sendForm('service_duzp5pe', 'template_qkbktna', e.target,
         'user_HkCjUmtgKD8JTx2Jgqkux', {
           name: this.name,
           email: this.email,
