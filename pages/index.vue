@@ -227,9 +227,12 @@
                   </v-row>
 
                   <v-card-actions class="justify-center" id="cardActions">
-                    <v-btn text outlined href="/trainthatbrain">
+                    <nuxt-link to="/trainthatbrain">
+
+                    <v-btn text outlined>
                       Learn More</v-btn
                     >
+                    </nuxt-link>
                     <v-btn
                       text
                       href="https://www.trainthatbrain.app/"
