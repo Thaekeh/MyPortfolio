@@ -116,7 +116,6 @@
           <h1>Netlify</h1>
         </v-row>
       </v-card>
-      <!-- <v-col cols="3" xs="0"></v-col> -->
       <v-col
         cols="12"
         xs="12"
@@ -141,7 +140,6 @@
           </v-col>
         </v-row>
       </v-col>
-      <!-- <v-col cols="3" xs="0"> </v-col> -->
     </v-row>
 
     <!-- My Work Title -->
@@ -212,11 +210,11 @@
                     </v-col>
                     <v-col xs="6" sm="6" md="3">
                       <img src="nuxtjs.png" alt="Vuetify" height="50px" />
-                      <p>Vuetify</p>
+                      <p>Nuxt.js</p>
                     </v-col>
                     <v-col xs="6" sm="6" md="3">
-                      <img src="pwaLogo.png" alt="PWA" height="50px" />
-                      <p>PWA</p>
+                      <img src="firebaseLogo.png" alt="PWA" height="50px" />
+                      <p>Firebase</p>
                     </v-col>
                   </v-row>
 
@@ -246,44 +244,35 @@
             <v-card>
               <v-card-title class="justify-center"> Who am I? </v-card-title>
               <v-card-text class="text-center">
-                A quick overview.
-                <v-row justify="center">
-                  <v-col cols="10">
-                    <v-timeline>
-                      <v-timeline-item color="blue" small fill-dot>
-                        <template v-slot:opposite>
-                          <span>25th of October 1997</span>
-                        </template>
-                        <div class="py-4">
-                          <h2 class="headline font-weight-light mb-4">
-                            Lorem ipsum
-                          </h2>
-                          <div>
-                            Lorem ipsum dolor sit amet, no nam oblique veritus.
-                            Commune scaevola imperdiet nec ut, sed euismod
-                            convenire principes at. Est et nobis iisque
-                            percipit, an vim zril disputando voluptatibus, vix
-                            an salutandi sententiae.
-                          </div>
-                        </div>
-                      </v-timeline-item>
-                      <v-timeline-item color="secondary" fill-dot small>
-                        <template v-slot:opposite>
-                          <span>25th of October 1997</span>
-                        </template>
-                        Started studying Automotive when I was
-                        17</v-timeline-item
-                      >
-                      <v-timeline-item color="secondary" fill-dot small>
-                        <template v-slot:opposite>
-                          <span>25th of October 1997</span>
-                        </template>
-                        Started dating a weird girl with a lot of mosquito
-                        bites</v-timeline-item
-                      >
-                    </v-timeline>
-                  </v-col>
-                </v-row>
+                <p>
+                  Hey there! My name is Thaeke, and I’m from the Netherlands.<br />
+                  I was born in 1997 on a farm in the Noordoostpolder. <br />
+                  I’m obsessed with learning from a broad variety of subjects.
+                  <br /><br />
+                  My main passions are the environment, computer science and
+                  software development, philosophy, and psychology. <br />
+                  I am doing a parttime Bachelor in Environmental Sciences at
+                  the Open University in the Netherlands.<br /><br />
+                  Creating things and coming up with new projects to work on is
+                  something I thoroughly enjoy.<br />
+                  Which is one of the reasons I have started developing as a
+                  front-end web developer.<br /><br />
+                  Three years ago, I started learning HTML and CSS, and started
+                  making some WordPress websites.<br />
+                  Then I started seeing the necessity of JavaScript and some of
+                  its frameworks for quality front-end web development.<br />
+                  While I started learning vanilla JavaScript, I was looking
+                  forward to learning some of the JS frameworks.<br />
+                  After playing around with JS for a while, and solving a bunch
+                  of problems on Code Academy, I was finally ready to learn a JS
+                  framework.<br />
+                  I chose Vue.js as my first JS framework because it seemed very
+                  powerful and had a short learning curve.<br />
+                  This meant I could start playing around and building my own
+                  apps.<br />
+                  I've learned a lot in the last years, and I'm excited to learn
+                  more!
+                </p>
               </v-card-text>
             </v-card>
           </v-col>
@@ -294,14 +283,26 @@
         <v-row justify="center">
           <v-col xs="8" sm="6" md="10">
             <v-card>
+              <v-card-title>
+                  <h2 id="contactFormTitle">Send me a message!</h2>
+              </v-card-title>
               <v-row justify="center">
                 <v-col xs="10" sm="6" md="6">
-                  <h2>Send me a message!</h2>
                   <v-form id="contactForm">
-                    <v-text-field label="Name"></v-text-field>
-                    <v-textarea label="Content"></v-textarea>
-                    <v-btn text>Send</v-btn>
+                    <v-text-field name="name" label="Name" v-model="name"></v-text-field>
+                    <v-text-field name="email" label="Email" v-model="email"></v-text-field>
+                    <v-textarea name="message" label="Message" v-model="message"></v-textarea>
+                    <v-card-actions class="justify-center">
+                    <v-btn text type="submit" value="Send">
+                      Send
+                      <v-icon right>
+                        mdi-send
+                      </v-icon>
+                      </v-btn>
+                    </v-card-actions>
                   </v-form>
+                  <form>
+                  </form>
                 </v-col>
               </v-row>
             </v-card>
@@ -313,9 +314,18 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com'
+
 export default {
   head: {
     title: 'Home',
+  },
+  data() {
+    return {
+      name: '',
+      email: '',
+      message: '',
+    }
   },
   computed: {
     fontSize() {
@@ -346,6 +356,23 @@ export default {
         this.$router.push({ path: `/#${goal}` })
       }
       this.drawer = false
+    },
+    sendEmail(e) {
+      try {
+        emailjs.sendForm('service_duzp5pe', 'template_rscdv8g', e.target,
+        'user_HkCjUmtgKD8JTx2Jgqkux', {
+          name: this.name,
+          email: this.email,
+          message: this.message
+        })
+
+      } catch(error) {
+          console.log({error})
+      }
+      // Reset form field
+      this.name = ''
+      this.email = ''
+      this.message = ''
     },
   },
 }
@@ -458,7 +485,6 @@ export default {
     left: 17vw
   @media (min-width: 1400px)
     left: 25vw
-    
 
 #nuxtCard
   right: 25vw
@@ -484,4 +510,9 @@ export default {
 
 .projectCardTitle
   font-weight: 600
+
+#contactFormTitle
+  margin-left: auto
+  margin-right: auto
+  font-size: 24px
 </style>
