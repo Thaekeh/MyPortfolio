@@ -5,52 +5,38 @@ description: A learning app for autodidacts
 ### The problem 
 
 In 2019, I moved to the beautiful city of Bilbao, Spain. 
-
 Since I was born in the Netherlands, I only knew a handful of words in Spanish. 
-
 Obviously, it’s not ideal to live in a country where you do not speak the language. 
 
 So during my time there I started learning Spanish. 
-
-To learn as efficiently as possible, I kept on looking for apps and tools that I could use to improve my Spanish learning. 
-
+To learn as efficiently as possible, I kept on looking for apps and tools that I could use to improve my Spanish learning.
 For me to learn anything, there are two things I need to do. 
 
 Firstly, I need to read (this is true for when I learn languages, science, coding or anything else) about the subject, and when it comes to learning languages, I need to read in my target language. 
 
 Secondly, I need to apply the knowledge I gained by reading. 
-
 This second step greatly increases how much I remember after a period of not using it. 
 
 So, when it comes to learning Spanish, I had to read in Spanish and then try and write and speak as much Spanish as I can. 
-
 Language learning apps like Duolingo can work to learn this way, but the premade content that Duolingo uses was not ideal for me. 
-
 I prefer reading the stories that I would normally read in English or Dutch. 
 
 So, I found some of the books that I like in Spanish and translated the words I didn’t know (spoiler: a lot!) with my phone. 
-
 This did work but it certainly wasn’t ideal. 
 
 Then a friend pointed me to Learning With Texts (LWT). 
-
 This is an open-source app where you can do exactly what I wanted. 
-
-You import a text to the app, and you start reading. 
-
+You simply import a text to the app, and you start reading. 
 While reading the text, you can click on any word and it automatically gives you the translation. 
 
 You can then easily save this word and its translation to a flashcard-list. 
-
 You can practice your saved words (flashcard-style) or export them to a flashcard app like Anki. 
 
 Now then, does this mean my problem was solved? 
-
 Most certainly not. 
 
 The software works, and it is quite good at what it does. 
-
-But it had its own issues: 
+But it had a couple of its own issues: 
 
 1) It was made by a single developer that could not maintain it very well. This meant, for example, that the only way you could use it was by hosting it locally on your own pc. 
 This means that your data was on one device and that it could not be synced with any other devices. 
@@ -60,7 +46,6 @@ The developer developed an effective tool but did not want to focus on design or
 This means that for someone that loves beautiful design (like me) it was not too exciting to use. 
 
  
-
 ### The solution 
 
 Since I had been learning HTLM, CSS, JS, and, most recently, Vue.js over the past few years I decided to try and create my own software to tackle the issues I had with LWT. 
