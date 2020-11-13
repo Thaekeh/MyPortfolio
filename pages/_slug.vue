@@ -6,13 +6,13 @@
     <v-row justify="center" id="description">
       <p>{{ page.description }}</p>
     </v-row>
-    <!-- <v-row justify="center">
+    <v-row justify="center">
       <v-col xs="12" sm="10" md="8" lg="6">
         <v-card id="imageCard">
           <v-img :src="page.img" :alt="page.alt"></v-img>
         </v-card>
       </v-col>
-    </v-row> -->
+    </v-row>
     <v-row justify="center" id="contentRow">
       <v-col xs="12" sm="10" md="12">
         <v-card>

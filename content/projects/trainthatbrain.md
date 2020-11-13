@@ -1,49 +1,52 @@
 ---
 title: Train That Brain
 description: A learning app for autodidacts
+img: /brainLogoExample.png
 ---
+<img src="/brainLogoExample.png" style="max-width: 25%"></img>
+
 ### The problem 
 
-In 2019, I moved to the beautiful city of Bilbao, Spain. 
-Since I was born in the Netherlands, I only knew a handful of words in Spanish. 
-Obviously, it’s not ideal to live in a country where you do not speak the language. 
+In 2019, I moved to the beautiful city of Bilbao, Spain.<br>
+Since I was born in the Netherlands, I only knew a handful of words in Spanish.<br>
+Obviously, it’s not ideal to live in a country where you do not speak the language.<br>
 
-So during my time there I started learning Spanish. 
-To learn as efficiently as possible, I kept on looking for apps and tools that I could use to improve my Spanish learning.
-For me to learn anything, there are two things I need to do. 
+So during my time there I started learning Spanish.<br>
+To learn as efficiently as possible, I kept on looking for apps and tools that I could use to improve my Spanish learning.<br>
+For me to learn anything, there are two things I need to do.<br>
 
 Firstly, I need to read (this is true for when I learn languages, science, coding or anything else) about the subject, and when it comes to learning languages, I need to read in my target language. 
 
-Secondly, I need to apply the knowledge I gained by reading. 
-This second step greatly increases how much I remember after a period of not using it. 
+Secondly, I need to apply the knowledge I gained by reading.<br>
+This second step greatly increases how much I remember after a period of not using it.<br>
 
-So, when it comes to learning Spanish, I had to read in Spanish and then try and write and speak as much Spanish as I can. 
-Language learning apps like Duolingo can work to learn this way, but the premade content that Duolingo uses was not ideal for me. 
-I prefer reading the stories that I would normally read in English or Dutch. 
+So, when it comes to learning Spanish, I had to read in Spanish and then try and write and speak as much Spanish as I can.<br>
+Language learning apps like Duolingo can work to learn this way, but the premade content that Duolingo uses was not ideal for me.<br>
+I prefer reading the stories that I would normally read in English or Dutch.<br>
 
-So, I found some of the books that I like in Spanish and translated the words I didn’t know (spoiler: a lot!) with my phone. 
-This did work but it certainly wasn’t ideal. 
+So, I found some of the books that I like in Spanish and translated the words I didn’t know (spoiler: a lot!) with my phone.<br>
+This did work but it certainly wasn’t ideal.<br>
 
-Then a friend pointed me to Learning With Texts (LWT). 
-This is an open-source app where you can do exactly what I wanted. 
-You simply import a text to the app, and you start reading. 
-While reading the text, you can click on any word and it automatically gives you the translation. 
+Then a friend pointed me to Learning With Texts (LWT).<br>
+This is an open-source app where you can do exactly what I wanted.<br>
+You simply import a text to the app, and you start reading.<br>
+While reading the text, you can click on any word and it automatically gives you the translation.<br>
 
-You can then easily save this word and its translation to a flashcard-list. 
-You can practice your saved words (flashcard-style) or export them to a flashcard app like Anki. 
+You can then easily save this word and its translation to a flashcard-list.<br>
+You can practice your saved words (flashcard-style) or export them to a flashcard app like Anki.<br>
 
-Now then, does this mean my problem was solved? 
-Most certainly not. 
+Now then, does this mean my problem was solved?<br>
+Most certainly not.<br>
 
-The software works, and it is quite good at what it does. 
-But it had a couple of its own issues: 
+The software works, and it is quite good at what it does.<br>
+But it had a couple of its own issues:<br>
 
-1) It was made by a single developer that could not maintain it very well. This meant, for example, that the only way you could use it was by hosting it locally on your own pc. 
-This means that your data was on one device and that it could not be synced with any other devices. 
+1) It was made by a single developer that could not maintain it very well. This meant, for example, that the only way you could use it was by hosting it locally on your own pc.<br>
+This means that your data was on one device and that it could not be synced with any other devices.<br>
  
 2) The UI is old, very old. 
-The developer developed an effective tool but did not want to focus on design or styling. 
-This means that for someone that loves beautiful design (like me) it was not too exciting to use. 
+The developer developed an effective tool but did not want to focus on design or styling.<br>
+This means that for someone that loves beautiful design (like me) it was not too exciting to use.<br>
 
  
 ### The solution 
@@ -72,110 +75,114 @@ It is easy to get started and has a lot to offer.
 Some of the main features are: 
 - Easy to create dynamic webpages 
 - Great code reusability by creating components 
-- Powerful libraries like Vuex (centralized store), Vue router and Vue Server Renderer (easy server-side rendering). 
+- Powerful libraries like Vuex (centralized store), Vue router and Vue Server Renderer (easy server-side rendering).
+<br>
+<br>
 
-When I wanted to start learning a JavaScript framework, I first did my research. 
-The main choices boiled down to: Angular, React and Vue. 
-The main reason I chose Vue was because of how positive people where about the short learning curve. 
-If you already know HTML, CSS and JS, it is relatively easy to get started with Vue. 
-It also seemed like the up-and-coming JS framework. 
-While learning this framework, I was extremely impressed with the way it was set up. 
-After creating a Vue project, it was easy to start playing around and trying out different things. 
-This has been a huge plus while learning Vue. 
+When I wanted to start learning a JavaScript framework, I first did my research.<br>
+The main choices boiled down to: Angular, React and Vue.<br>
+The main reason I chose Vue was because of how positive people where about the short learning curve.<br>
+If you already know HTML, CSS and JS, it is relatively easy to get started with Vue.<br>
+It also seemed like the up-and-coming JS framework.<br><br>
+While learning this framework, I was extremely impressed with the way it was set up.<br>
+After creating a Vue project, it was easy to start playing around and trying out different things.<br>
+This has been a huge plus while learning Vue.<br>
  
-- Nuxt.js 
-Nuxt.js is a marvelous Vue.js framework. 
+- Nuxt.js <br>
+Nuxt.js is a marvelous Vue.js framework.<br>
 Some of the main features are: 
 - Server-side rendering with great SEO performance. 
 - Middleware to perform actions between route changes. 
 - Layouts that you can use on multiple pages. 
 - Great Nuxt Modules like Progressive Web App (PWA) and Nuxt Content. 
- 
-- Firebase 
-Firebase is a “comprehensive app development platform” as google calls it. 
-It has many great features like Firestore (a NoSQL Database), Firebase Authentication, and Cloud Functions. 
-Firebase is very easy to get started and it has plenty of documentation (and developers that have written about it) to figure out how it works and how to use it. 
-It allows for real-time database updates which works great when combined with the Vuex store. 
-
- 
-
+ <br>
+ <br>
+- Firebase<br>
+Firebase is a “comprehensive app development platform” as google calls it.<br>
+It has many great features like Firestore (a NoSQL Database), Firebase Authentication, and Cloud Functions.<br>
+Firebase is very easy to get started and it has plenty of documentation (and developers that have written about it) to figure out how it works and how to use it.<br>
+It allows for real-time database updates which works great when combined with the Vuex store.<br>
+<br>
+<br>
 - Microsoft Azure Translator 
-The translator service of Microsoft Azure is ideal for getting accurate translations for decent pricing. 
-It works by sending an API post request to their endpoint with the translation as one of the parameters. 
-As a response you get the translation and some meta-data. 
-There are also some other options like dictionary lookup, which offers alternate translations, and dictionary examples, which places the translation in a sentence to offer context. 
+The translator service of Microsoft Azure is ideal for getting accurate translations for decent pricing.<br>
+It works by sending an API post request to their endpoint with the translation as one of the parameters.<br>
+As a response you get the translation and some meta-data.<br>
+There are also some other options like dictionary lookup, which offers alternate translations, and dictionary examples, which places the translation in a sentence to offer context.<br>
+ <br>
+ <br> 
+- Vuetify<br>
+Vuetify is a UI component library that uses the material design system.<br>
+There are many different UI components that you can use out of the box.<br>
+This means it is very easy to start building a webapp.<br>
+Eventually I did run into some issues with limited customizability, but it’s a great library to quickly build a prototype.<br>
+ <br>
+ <br>
+- GitHub<br> 
+GitHub is primarily used for version management.<br>
+This allows for making changes to your code without losing all the previous versions.<br>
+You can have different branches which allows you to have code for development and code for production.<br> 
+GitHub is an essential tool for every developer.<br>
+<br>
+<br>
  
+- Figma<br>
+Figma is a great tool for making designs for websites and apps for both desktop and mobile.<br>
+Because of the intuitive UI, you can quickly create wireframes and early sketches.<br>
+With the prototyping function you can add on-hover effects or apply actions on click (like going to different pages or opening sliders).<br>
+This way you can create a complete prototype before writing a single line of code.<br>
  
-- Vuetify 
-Vuetify is a UI component library that uses the material design system. 
-There are many different UI components that you can use out of the box. 
-This means it is very easy to start building a webapp. 
-Eventually I did run into some issues with limited customizability, but it’s a great library to quickly build a prototype. 
- 
-- GitHub 
-GitHub is primarily used for version management. 
-This allows for making changes to your code without losing all the previous versions. 
-You can have different branches which allows you to have code for development and code for production. 
-GitHub is an essential tool for every developer. 
- 
-- Figma 
-Figma is a great tool for making designs for websites and apps for both desktop and mobile. 
-Because of the intuitive UI, you can quickly create wireframes and early sketches. 
-With the prototyping function you can add on-hover effects or apply actions on click (like going to different pages or opening sliders). 
-This way you can create a complete prototype before writing a single line of code. 
- 
- 
- 
-### The process 
-Making Train That Brain has been quite the journey. 
-It is the first webapp that I’ve ever made, and I’ve learned a lot! 
-Building a webapp from scratch on your own like I did here, makes you go through the entire process from an idea to the design, to the actual coding and developing. 
-This starts with the idea and brainstorming. 
-I had an idea of what I wanted to create so the main thing to figure out in this stage was what my scope was. 
-The project had to stay possible for me to build so I could not allow too much scope creep, or I would risk never finishing the project at all. 
- 
-Then at some point, after a bunch of brainstorming, it was time to start making something. 
-Here we enter the design phase. 
-I did this at first by making rough sketches on paper and putting them up on my wall so I can have an overview of the layouts that I like and dislike. 
-Then I picked a few designs that I liked, and I started creating them in Figma. 
-This way I could get a better idea of what it looked like in more detail. 
-Figma makes it very easy to make quick alterations and different versions. 
-After creating a few versions that I really liked, it was time to start coding. 
- 
-There were many things that I had to figure out along the way. 
-A big part was learning how to work with Firebase. 
-It was very important for me to make my app work flawlessly with the database. 
-After trying a lot of trial and error I found that I could use Firestore’s onSnapshot listeners when calling nuxtServerInit. 
-This meant that all the data would be automatically synced when a document in Firestore was added, modified or deleted. 
-This resulted in great performance within my app. 
- 
-Another problem that I had to solve was how to retrieve the correct user data. 
-For my app this meant retrieving the required flashcard-lists, texts, and user settings when the app is opened. 
-This is because Firestore is a NoSQL database. 
-This means that the data does not have relations like in a SQL-database. 
-Each document contains a set of key-value pairs. 
-If you want to link to another document, one of these key-value pairs will have to include the ID of that document. 
-This is what that looks like in the database of Train That Brain. 
-PICTURE OF DATABASE DIAGRAM 
- 
-It is important to explain how some of these things work. 
-Let’s start with the user: 
-PICTURE OF USER DIAGRAM 
- 
-The name, email and created_at variables are self-explanatory. 
-The setting variable is a map that contains more key-value pairs. 
-Currently it holds: 
-- date_format: desired date format which can be changed from the settings page. 
- 
-The User ID (UID) is used to retrieve the relevant data to the user. 
-This also means the user cannot retrieve any data with a UID that is different than the document contains. 
- 
-Then the last_translate and translate_counter. 
-These variables are used to determine when the user has reached the maximum translations in trial mode (currently 50). 
-Every time the user clicks on a word in a text, the app does some checks. 
-First it looks at whether the last_translate date is different than the current date. 
-If so, it resets the translate_counter to 0 before continuing the translation. 
+<br>
+<br>
 
+### The process 
+Making Train That Brain has been quite the journey.<br>
+It is the first webapp that I’ve ever made, and I’ve learned a lot!<br>
+Building a webapp from scratch on your own like I did here, makes you go through the entire process from an idea to the design, to the actual coding and developing.<br>
+This starts with the idea and brainstorming.<br>
+I had an idea of what I wanted to create so the main thing to figure out in this stage was what my scope was.<br>
+The project had to stay possible for me to build so I could not allow too much scope creep, or I would risk never finishing the project at all.<br>
+<br>
+Then at some point, after a bunch of brainstorming, it was time to start making something.<br>
+Here we enter the design phase.<br>
+I did this at first by making rough sketches on paper and putting them up on my wall so I can have an overview of the layouts that I like and dislike.<br>
+Then I picked a few designs that I liked, and I started creating them in Figma.<br>
+This way I could get a better idea of what it looked like in more detail.<br>
+Figma makes it very easy to make quick alterations and different versions.<br>
+After creating a few versions that I really liked, it was time to start coding.<br> 
+<br>
+There were many things that I had to figure out along the way.<br>
+A big part was learning how to work with Firebase.<br>
+It was very important for me to make my app work flawlessly with the database.<br>
+After trying a lot of trial and error I found that I could use Firestore’s onSnapshot listeners when calling nuxtServerInit.<br>
+This meant that all the data would be automatically synced when a document in Firestore was added, modified or deleted.<br>
+This resulted in great performance within my app.<br>
+<br>
+Another problem that I had to solve was how to retrieve the correct user data.<br>
+For my app this meant retrieving the required flashcard-lists, texts, and user settings when the app is opened.<br>
+This is because Firestore is a NoSQL database.<br>
+This means that the data does not have relations like in a SQL-database.<br> 
+Each document contains a set of key-value pairs.<br>
+If you want to link to another document, one of these key-value pairs will have to include the ID of that document.<br>
+This is what that looks like in the database of Train That Brain.<br>
+<img src="/TTB-database-diagram.png" style="max-width: 100%"></img>
+ 
+It is important to explain how some of these things work.<br>
+Let’s start with the user.<br>
+The name, email and created_at variables are self-explanatory.<br>
+The setting variable is a map that contains more key-value pairs.<br>
+Currently it contains
+- date_format: desired date format which can be changed from the settings page. 
+<br>
+<br>
+
+The User ID (UID) is used to retrieve the relevant data to the user.<br>
+This also means the user cannot retrieve any data with a UID that is different than the UID in the document the user wants to retrieve.<br>
+Then the last_translate and translate_counter.<br>
+These variables are used to determine when the user has reached the maximum translations in trial mode (currently 50).<br> 
+Every time the user clicks on a word in a text, the app does some checks.<br> 
+First it looks at whether the last_translate date is different than the current date.<br> 
+If so, it resets the translate_counter to 0 before continuing the translation.<br>
 If not, the app checks if the translate_counter is equal to or bigger than 50 (which is the current maximum translations per day). 
 If so, the word does not get translated and the user gets a response saying they have reached the maximum translations for today. 
 If not, the word gets translated and the translate_counter gets incremented by one. 
@@ -233,4 +240,7 @@ But for this project it was great to get started.
 I will certainly use Vue and Nuxt in my upcoming projects. 
 The ease of use and the variety of features available is great for quicker and better developing. 
  
-Firebase has been great for my purposes in this project and I would like to use it again. 
+Firebase has been great for my purposes in this project and I would really like to use it in my future projects.
+
+All by all, I am very happy with everything I've learned over the last few months and I'm looking forward to learn more about webdevelopment and to improve my skills.
+If you have any questions, feel free to send me a <a href="/#contact" style="color: black">message</a>
