@@ -31,11 +31,14 @@
     </v-app-bar>
     <v-overlay v-model="drawer" id="menuOverlay" opacity="0.8">
       <v-list id="list">
-        <v-list-item class="menuListItem" @click="goTo('home')">
+        <v-list-item class="menuListItem" @click="goTo('top')">
           Home
         </v-list-item>
         <v-list-item class="menuListItem" @click="goTo('work')">
           Work
+        </v-list-item>
+        <v-list-item class="menuListItem" @click="goTo('about')">
+          About
         </v-list-item>
         <v-list-item class="menuListItem" @click="goTo('contact')">
           Contact

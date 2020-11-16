@@ -163,7 +163,7 @@
     </v-row>
 
     <v-row justify="center" align="center">
-      <v-col xs="12" sm="12" md="10" id="itemColumn">
+      <v-col xs="12" sm="12" md="10" lg="8" id="itemColumn">
         <v-lazy
           :options="{
             threshold: 0.5,
@@ -268,7 +268,7 @@
           </v-lazy>
         </v-row>
         <v-row justify="center">
-          <v-col xs="6" sm="8" md="10">
+          <v-col xs="6" sm="10" md="12" lg="10">
             <v-lazy
               :options="{
                 threshold: 0.5,
@@ -279,7 +279,10 @@
               <v-card>
                 <v-card-title class="justify-center"> Who am I? </v-card-title>
                 <v-card-text class="text-center">
-                  <p>
+                  <v-avatar size="300px" id="avatar">
+                    <img src="profilepicture.jpg">
+                  </v-avatar>
+                  <p id="aboutMeParagraph">
                     Hey there! My name is Thaeke, and I’m from the
                     Netherlands.<br />
                     I was born in 1997 on a farm in the Noordoostpolder. <br />
@@ -298,8 +301,8 @@
                     Then I started seeing the necessity of JavaScript and some
                     of its frameworks for quality front-end web development.<br />
                     While I started learning vanilla JavaScript, I was looking
-                    forward to learning some of the JS frameworks.<br />
-                    After playing around with JS for a while, and solving a
+                    forward to learning some of the JS frameworks.<br /><br>
+                    After making some things with JS, and solving a
                     bunch of problems on Code Academy, I was finally ready to
                     learn a JS framework.<br />
                     I chose Vue.js as my first JS framework because it seemed
@@ -345,19 +348,25 @@
                         name="name"
                         label="Name"
                         v-model="name"
+                        color="secondary"
+                        :rules="nameRules"
                       ></v-text-field>
                       <v-text-field
                         name="email"
                         label="Email"
                         v-model="email"
+                        color="secondary"
+                        :rules="emailRules"
                       ></v-text-field>
                       <v-textarea
                         name="message"
                         label="Message"
                         v-model="message"
+                        color="secondary"
+                        :rules="messageRules"
                       ></v-textarea>
                       <v-card-actions class="justify-center">
-                        <v-btn text type="submit" value="Send">
+                        <v-btn text type="submit" value="Send" :loading="loading" :disabled="loading">
                           Send
                           <v-icon right> mdi-send </v-icon>
                         </v-btn>
@@ -372,6 +381,9 @@
         </v-row>
       </v-col>
     </v-row>
+    <v-snackbar v-model="snackbar" top>
+      Thank you for your message! I'll be in contact soon!
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -380,13 +392,26 @@ import emailjs from 'emailjs-com'
 
 export default {
   head: {
-    title: 'Home',
+    title: 'Portfolio',
   },
   data() {
     return {
       name: '',
       email: '',
       message: '',
+      loading: false,
+      snackbar: false,
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => v.length <= 25 || 'Name must be less than 25 characters',
+      ],
+      messageRules: [
+        v => !!v || 'Message is required',
+      ],
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+/.test(v) || 'E-mail must be valid',
+      ],
     }
   },
   computed: {
@@ -432,6 +457,7 @@ export default {
             message: this.message,
           }
         )
+      this.setLoader()
       } catch (error) {
         console.log({ error })
       }
@@ -440,6 +466,15 @@ export default {
       this.email = ''
       this.message = ''
     },
+    setLoader() {
+      var self = this
+      this.loading = true
+      setTimeout(function() { 
+        self.loading = false
+        self.snackbar = true
+        console.log('working')
+        }, 3000);
+    }
   },
 }
 </script>
@@ -484,6 +519,7 @@ export default {
 #greatCard
   border-radius: 30px
   padding: 0
+  cursor: default !important
 
 #itemColumn
   padding: 0
@@ -520,6 +556,7 @@ export default {
 .techCard
   position: absolute
   display: flex
+  cursor: default !important
 
 .techCardRow
   padding: 20px 30px 20px 30px
@@ -581,4 +618,10 @@ export default {
   margin-left: auto
   margin-right: auto
   font-size: 24px
+
+#aboutMeParagraph
+  font-size: 16px
+
+#avatar
+  margin-bottom: 30px
 </style>

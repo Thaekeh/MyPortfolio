@@ -3,8 +3,6 @@ title: Train That Brain
 description: A learning app for autodidacts
 img: /brainLogoExample.png
 ---
-<img src="/brainLogoExample.png" style="max-width: 25%"></img>
-
 ### The problem 
 
 In 2019, I moved to the beautiful city of Bilbao, Spain.<br>

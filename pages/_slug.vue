@@ -6,13 +6,11 @@
     <v-row justify="center" id="description">
       <p>{{ page.description }}</p>
     </v-row>
-    <v-row justify="center">
-      <v-col xs="12" sm="10" md="8" lg="6">
-        <v-card id="imageCard">
-          <v-img :src="page.img" :alt="page.alt"></v-img>
-        </v-card>
+    <!-- <v-row justify="center">
+      <v-col xs="12" sm="10" md="8" lg="6" class="background">
+          <v-img id="image" :src="page.img" :alt="page.alt"></v-img>
       </v-col>
-    </v-row>
+    </v-row> -->
     <v-row justify="center" id="contentRow">
       <v-col xs="12" sm="10" md="12">
         <v-card>
@@ -81,7 +79,7 @@ export default {
 #content
   padding: 2rem
 
-#imageCard
+#image
   // width: 30%
   border-radius: 15px
   margin-bottom: 20px
