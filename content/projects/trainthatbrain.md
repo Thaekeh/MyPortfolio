@@ -3,7 +3,7 @@ title: Train That Brain
 description: A learning app for autodidacts
 img: /brainLogoExample.png
 ---
-### The problem 
+### The Problem 
 
 In 2019, I moved to the beautiful city of Bilbao, Spain.<br>
 Since I was born in the Netherlands, I only knew a handful of words in Spanish.<br>
@@ -47,9 +47,9 @@ The developer developed an effective tool but did not want to focus on design or
 This means that for someone that loves beautiful design (like me) it was not too exciting to use.<br>
 
  
-### The solution 
+### The Solution 
 
-Since I had been learning HTLM, CSS, JS, and, most recently, Vue.js over the past few years I decided to try and create my own software to tackle the issues I had with LWT. 
+Since I had been learning HTML, CSS, JS, and, most recently, Vue.js over the past few years I decided to try and create my own software to tackle the issues I had with LWT. 
 
 There were a few things that I had to figure out before I could start coding. 
 
@@ -133,7 +133,7 @@ This way you can create a complete prototype before writing a single line of cod
 <br>
 <br>
 
-### The process 
+### The Process 
 Making Train That Brain has been quite the journey.<br>
 It is the first webapp that I’ve ever made, and I’ve learned a lot!<br>
 Building a webapp from scratch on your own like I did here, makes you go through the entire process from an idea to the design, to the actual coding and developing.<br>
@@ -205,6 +205,35 @@ This variable is used to show the deadline date for this goal.
 This date will be formatted to the user’s preferred format. 
  
 Those are the most important variables within the different documents. 
+
+### The Result
+
+For now, I'm happy with the result.
+I'm planning to make many more changes but for now, this is what it looks like.
+
+<b>The Dashboard</b>
+<img src="/ttb-dashboard.png" style="max-width: 100%"></img>
+From here you can access all the lists and texts that you have created.
+
+<b>The Text</b>
+<img src="/ttb-text.png" style="max-width: 100%"></img>
+This is where you can read a text and translate the words with a simple click.
+There are some settings which you can change:
+- Font Size
+- Line Spacing
+- Source Language
+- Target Language
+
+You can also easily edit the text by clicking on the pencil icon.
+
+<b>The Flashcard</b>
+<img src="/ttb-flashcard.png" style="max-width: 100%"></img>
+This is where you can practice your flashcards.
+By clicking on the card, it shows the other side.
+Then you can simply click one of the difficulty buttons to tell the algorithm how well you remember it.
+
+
+From the Navbar, you can also toggle dark-mode to keep your eyes from getting roasted.
 
  
 
