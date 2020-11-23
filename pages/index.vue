@@ -151,26 +151,11 @@
         marginBottom: '30px',
       }"
     >
-      <v-lazy
-        :options="{
-          threshold: 0.5,
-        }"
-        min-height="200"
-        transition="fade-transition"
-      >
-        <h1 id="work">My Work</h1>
-      </v-lazy>
+      <h1 id="work">My Work</h1>
     </v-row>
 
     <v-row justify="center" align="center">
       <v-col xs="12" sm="12" md="10" lg="8" id="itemColumn">
-        <v-lazy
-          :options="{
-            threshold: 0.5,
-          }"
-          min-height="200"
-          transition="fade-transition"
-        >
           <!-- <v-card id="greatCard" hover>
             <v-row>
               <v-col xs="12" sm="6" md="6" id="inlayColumn">
@@ -249,29 +234,15 @@
           </v-card> -->
 
           <project-card></project-card>
-        </v-lazy>
+        
 
         <!-- About Me Title -->
         <v-row justify="center" id="aboutTitle">
-          <v-lazy
-            :options="{
-              threshold: 0.5,
-            }"
-            min-height="200"
-            transition="fade-transition"
-          >
-            <h1 id="about">About Me</h1>
-          </v-lazy>
+          <h1 id="about">About Me</h1>
         </v-row>
         <v-row justify="center">
           <v-col xs="6" sm="10" md="12" lg="10">
-            <v-lazy
-              :options="{
-                threshold: 0.5,
-              }"
-              min-height="200"
-              transition="fade-transition"
-            >
+            
               <v-card>
                 <v-card-title class="justify-center"> Who am I? </v-card-title>
                 <v-card-text class="text-center">
@@ -310,36 +281,26 @@
                   </p>
                 </v-card-text>
               </v-card>
-            </v-lazy>
+            
           </v-col>
         </v-row>
         <v-row justify="center" id="contactTitle">
-          <v-lazy
-            :options="{
-              threshold: 0.5,
-            }"
-            min-height="200"
-            transition="fade-transition"
-          >
-            <h1 id="contact">Contact Me</h1>
-          </v-lazy>
+          <h1 id="contact">Contact Me</h1>
         </v-row>
         <v-row justify="center">
           <v-col xs="8" sm="6" md="10">
-            <v-lazy
-              :options="{
-                threshold: 0.5,
-              }"
-              min-height="200"
-              transition="fade-transition"
-            >
+            
               <v-card>
                 <v-card-title>
                   <h2 id="contactFormTitle">Send me a message!</h2>
                 </v-card-title>
                 <v-row justify="center">
                   <v-col xs="10" sm="6" md="6">
-                    <v-form id="contactForm" ref="form" @submit.prevent="sendEmail">
+                    <v-form
+                      id="contactForm"
+                      ref="form"
+                      @submit.prevent="sendEmail"
+                    >
                       <v-text-field
                         name="name"
                         label="Name"
@@ -378,13 +339,15 @@
                   </v-col>
                 </v-row>
               </v-card>
-            </v-lazy>
+            
           </v-col>
         </v-row>
       </v-col>
     </v-row>
     <v-snackbar v-model="snackbar" top color="success">
-      <span id="snackbarContent">Thank you for your message! I'll be in contact soon!</span>
+      <span id="snackbarContent"
+        >Thank you for your message! I'll be in contact soon!</span
+      >
     </v-snackbar>
   </v-container>
 </template>
@@ -448,28 +411,27 @@ export default {
     },
     sendEmail(e) {
       if (this.$refs.form.validate()) {
-
         try {
           emailjs.sendForm(
             'service_duzp5pe',
-          'template_qkbktna',
-          e.target,
-          'user_HkCjUmtgKD8JTx2Jgqkux',
-          {
-            name: this.name,
-            email: this.email,
-            message: this.message,
-          }
-        )
-        this.setLoader()
-        // Reset form field
-      this.name = ''
-      this.email = ''
-      this.message = ''
-      this.$refs.form.resetValidation()
-      } catch (error) {
-        console.log({ error })
-      }
+            'template_qkbktna',
+            e.target,
+            'user_HkCjUmtgKD8JTx2Jgqkux',
+            {
+              name: this.name,
+              email: this.email,
+              message: this.message,
+            }
+          )
+          this.setLoader()
+          // Reset form field
+          this.name = ''
+          this.email = ''
+          this.message = ''
+          this.$refs.form.resetValidation()
+        } catch (error) {
+          console.log({ error })
+        }
       }
     },
     setLoader() {
