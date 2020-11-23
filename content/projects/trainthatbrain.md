@@ -1,7 +1,12 @@
 ---
 title: Train That Brain
 description: A learning app for autodidacts
-img: /brainLogoExample.png
+img: /brainLogoExample-Cropped.png
+date: {
+    month: October,
+    year: 2020,
+}
+table: true
 ---
 ### The Problem 
 

@@ -1,21 +1,23 @@
 <template>
-  <article>
+  <article id="article">
     <v-row justify="center" id="articleTitle">
       <h1>{{ page.title }}</h1>
     </v-row>
     <v-row justify="center" id="description">
       <p>{{ page.description }}</p>
+      <p id="bullet">&#8226;</p>
+      <p>{{ page.date.year }}</p>
     </v-row>
-    <!-- <v-row justify="center">
+    <v-row justify="center">
       <v-col xs="12" sm="10" md="8" lg="6" class="background">
-          <v-img id="image" :src="page.img" :alt="page.alt"></v-img>
+          <v-img id="image" :src="page.img" :alt="page.alt" contain></v-img>
       </v-col>
-    </v-row> -->
+    </v-row>
     <v-row justify="center" id="contentRow">
       <v-col xs="12" sm="10" md="12">
-        <v-card>
+        <!-- <v-card> -->
           <v-row justify="center">
-              <v-list>
+              <v-list v-if="page.table" id="list">
                 <v-list-item id="tableOfContents" class="listItem">
                   <h3 id="listTitle">Table of Contents</h3>
                 </v-list-item>
@@ -38,7 +40,7 @@
               <nuxt-content id="content" :document="page" />
             </v-col>
           </v-row>
-        </v-card>
+        <!-- </v-card> -->
       </v-col>
     </v-row>
   </article>
@@ -65,11 +67,14 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+#list
+  background-color: #FEFAF6
 #description
   margin-bottom: 20px
 
 #nuxtLink
   color: black
+
 
 #contentRow
   // width: 80%
@@ -81,9 +86,15 @@ export default {
 
 #image
   // width: 30%
+  width: 300px
+  max-height: 450px
   border-radius: 15px
   margin-bottom: 20px
-
+  margin-left: auto
+  margin-right: auto
+  border: none
+  padding: none
+  overflow: hidden
 #articleTitle
   margin-top: 50px
 
@@ -95,4 +106,12 @@ export default {
 #listTitle
   margin-left: auto
   margin-right: auto
+
+#bullet
+  font-weight: bold
+  margin-left: 10px
+  margin-right: 10px
+
+.nuxt-content #link
+  color: black
 </style>

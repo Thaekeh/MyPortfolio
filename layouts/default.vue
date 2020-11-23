@@ -19,4 +19,8 @@ export default {
 <style lang="sass" scoped>
 html
   scroll-behavior: smooth
+  background-color: #FEFAF6
+
+body
+  background-color: #FEFAF6
 </style>

@@ -1,0 +1,78 @@
+[
+    {
+        "title": "A webapp for autodidacts",
+        "content": "Learn anything you want by reading and quickly adding difficult words to your flashcard deck.",
+        "image": "brainLogoExample-Cropped.png",
+        "color": "#2878EA",
+        "techStack": [
+            {
+                "title": "Vue.js",
+                "img": "vueLogo.jpeg",
+                "alt": "Vue Logo"
+            },
+            {
+                "title": "Nuxt.js",
+                "img": "nuxtjs.png",
+                "alt": "Nuxt Logo"
+            },
+            {
+                "title": "Firebase",
+                "img": "firebaseLogo.png",
+                "alt": "Vue Logo"
+            },
+            {
+                "title": "Vuetify",
+                "img": "vuetify-logo.svg",
+                "alt": "Vuetify Logo"
+            }
+        ],
+        "buttons": [
+            {
+                "title": "Learn More",
+                "route": "/trainthatbrain"
+            },
+            {
+                "title": "Visit Site",
+                "route": "https://www.trainthatbrain.app/"
+            }
+        ]
+    },
+    {
+        "title": "UI Component Creator",
+        "content": "Easily style UI components without writing a single line of CSS with this simple Chrome extension.",
+        "image": "UI-component-extension-large.png",
+        "color": "#8E10F0",
+        "techStack": [
+            {
+                "title": "HTML5",
+                "img": "HTML5-logo.svg",
+                "alt": "HTML Logo"
+            },
+            {
+                "title": "CSS3",
+                "img": "CSS3-logo.svg",
+                "alt": "CSS Logo"
+            },
+            {
+                "title": "JavaScript",
+                "img": "JS-logo.svg",
+                "alt": "JavaScript Logo"
+            },
+            {
+                "title": "jQuery",
+                "img": "jQuery-logo.png",
+                "alt": "jQuery Logo"
+            }
+        ],
+        "buttons": [
+            {
+                "title": "Learn More",
+                "route": "/ui-component"
+            },
+            {
+                "title": "Visit Extension",
+                "route": "https://chrome.google.com/webstore/detail/ui-component-creator/mlnbpchpagncgbmikclojpbibgjaindf?hl=en-US"
+            }
+        ]
+    }
+]

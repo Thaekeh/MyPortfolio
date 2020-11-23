@@ -171,19 +171,16 @@
           min-height="200"
           transition="fade-transition"
         >
-          <v-card id="greatCard" hover>
+          <!-- <v-card id="greatCard" hover>
             <v-row>
               <v-col xs="12" sm="6" md="6" id="inlayColumn">
-                <!-- <v-card color="primary" class="primary" id="inlayCard" height="100%"
-                >
-                <v-img src="brainLogoExample.png" height="100%" width="100%"></v-img
-              ></v-card> -->
                 <v-card color="#2878EA" id="inlayCard" height="100%">
                   <v-container fluid fill-height>
                     <v-col cols="12">
                       <v-img
                         src="brainLogoExample-Cropped.png"
-                        id="inlayImage"
+                        class="inlayImage"
+                        id="ttbInlayImage"
                       ></v-img>
                     </v-col>
                   </v-container>
@@ -218,9 +215,6 @@
                           alt="Vuetify"
                           height="50px"
                         />
-                        <!-- <v-avatar>
-                      <img src="vuetify-logo.svg" alt="Vuetify">
-                    </v-avatar> -->
                         <p>Vuetify</p>
                       </v-col>
                       <v-col xs="6" sm="6" md="3">
@@ -252,7 +246,9 @@
                 </v-card-text>
               </v-col>
             </v-row>
-          </v-card>
+          </v-card> -->
+
+          <project-card></project-card>
         </v-lazy>
 
         <!-- About Me Title -->
@@ -280,7 +276,7 @@
                 <v-card-title class="justify-center"> Who am I? </v-card-title>
                 <v-card-text class="text-center">
                   <v-avatar size="300px" id="avatar">
-                    <img src="profilepicture.jpg">
+                    <img src="profilepicture.jpg" />
                   </v-avatar>
                   <p id="aboutMeParagraph">
                     Hey there! My name is Thaeke, and I’m from the
@@ -301,10 +297,10 @@
                     Then I started seeing the necessity of JavaScript and some
                     of its frameworks for quality front-end web development.<br />
                     While I started learning vanilla JavaScript, I was looking
-                    forward to learning some of the JS frameworks.<br /><br>
-                    After making some things with JS, and solving a
-                    bunch of problems on Code Academy, I was finally ready to
-                    learn a JS framework.<br />
+                    forward to learning some of the JS frameworks.<br /><br />
+                    After making some things with JS, and solving a bunch of
+                    problems on Code Academy, I was finally ready to learn a JS
+                    framework.<br />
                     I chose Vue.js as my first JS framework because it seemed
                     very powerful and had a short learning curve.<br />
                     This meant I could start playing around and building my own
@@ -343,7 +339,7 @@
                 </v-card-title>
                 <v-row justify="center">
                   <v-col xs="10" sm="6" md="6">
-                    <v-form id="contactForm" @submit.prevent="sendEmail">
+                    <v-form id="contactForm" ref="form" @submit.prevent="sendEmail">
                       <v-text-field
                         name="name"
                         label="Name"
@@ -366,7 +362,13 @@
                         :rules="messageRules"
                       ></v-textarea>
                       <v-card-actions class="justify-center">
-                        <v-btn text type="submit" value="Send" :loading="loading" :disabled="loading">
+                        <v-btn
+                          text
+                          type="submit"
+                          value="Send"
+                          :loading="loading"
+                          :disabled="loading"
+                        >
                           Send
                           <v-icon right> mdi-send </v-icon>
                         </v-btn>
@@ -381,14 +383,15 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-snackbar v-model="snackbar" top>
-      Thank you for your message! I'll be in contact soon!
+    <v-snackbar v-model="snackbar" top color="success">
+      <span id="snackbarContent">Thank you for your message! I'll be in contact soon!</span>
     </v-snackbar>
   </v-container>
 </template>
 
 <script>
 import emailjs from 'emailjs-com'
+import ProjectCard from '@/components/ProjectCard'
 
 export default {
   head: {
@@ -402,16 +405,15 @@ export default {
       loading: false,
       snackbar: false,
       nameRules: [
-        v => !!v || 'Name is required',
-        v => v.length <= 25 || 'Name must be less than 25 characters',
+        (v) => !!v || 'Name is required',
+        (v) => v.length <= 25 || 'Name must be less than 25 characters',
       ],
-      messageRules: [
-        v => !!v || 'Message is required',
-      ],
+      messageRules: [(v) => !!v || 'Message is required'],
       emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid',
+        (v) => !!v || 'E-mail is required',
+        (v) => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
+      projectList: [],
     }
   },
   computed: {
@@ -445,9 +447,11 @@ export default {
       this.drawer = false
     },
     sendEmail(e) {
-      try {
-        emailjs.sendForm(
-          'service_duzp5pe',
+      if (this.$refs.form.validate()) {
+
+        try {
+          emailjs.sendForm(
+            'service_duzp5pe',
           'template_qkbktna',
           e.target,
           'user_HkCjUmtgKD8JTx2Jgqkux',
@@ -457,24 +461,26 @@ export default {
             message: this.message,
           }
         )
-      this.setLoader()
-      } catch (error) {
-        console.log({ error })
-      }
-      // Reset form field
+        this.setLoader()
+        // Reset form field
       this.name = ''
       this.email = ''
       this.message = ''
+      this.$refs.form.resetValidation()
+      } catch (error) {
+        console.log({ error })
+      }
+      }
     },
     setLoader() {
       var self = this
       this.loading = true
-      setTimeout(function() { 
+      setTimeout(function () {
         self.loading = false
         self.snackbar = true
         console.log('working')
-        }, 3000);
-    }
+      }, 2000)
+    },
   },
 }
 </script>
@@ -516,8 +522,10 @@ export default {
 #hoverCard
   border-radius: 20px
   cursor: pointer
+
 #greatCard
   border-radius: 30px
+  margin-bottom: 200px
   padding: 0
   cursor: default !important
 
@@ -530,10 +538,16 @@ export default {
 #inlayCard
   border-radius: 30px
 
-#inlayImage
+.inlayImage
   border-radius: 30px
   margin-top: auto
   margin-bottom: auto
+
+#uiInlayImage
+  max-width: 60%
+  margin-left: auto
+  margin-right: auto
+  border-radius: 0
 
 #cardTextCol
   margin: auto
@@ -543,15 +557,6 @@ export default {
 
 #aboutTitle
   margin-top: 100px
-
-#cardActions
-  margin-top: 30px
-
-#techStack
-  margin-top: 50px
-
-#techStackLogos
-  margin-top: 30px
 
 .techCard
   position: absolute
@@ -624,4 +629,9 @@ export default {
 
 #avatar
   margin-bottom: 30px
+
+#snackbarContent
+  color: white
+  font-weight: 500
+  font-size: 18px
 </style>
