@@ -10,7 +10,7 @@
     </v-row>
     <v-row justify="center">
       <v-col xs="12" sm="10" md="8" lg="6" class="background">
-          <v-img id="image" :src="page.img" :alt="page.alt" contain></v-img>
+          <v-img id="image" :src="page.img" :alt="page.alt" contain :width="page.imageHeight"></v-img>
       </v-col>
     </v-row>
     <v-row justify="center" id="contentRow">
@@ -36,7 +36,7 @@
 
           </v-row>
           <v-row justify="center">
-            <v-col cols="10">
+            <v-col cols="8" xs="12" sm="8">
               <nuxt-content id="content" :document="page" />
             </v-col>
           </v-row>
@@ -86,8 +86,8 @@ export default {
 
 #image
   // width: 30%
-  width: 300px
-  max-height: 450px
+  // width: 300px
+  // max-height: 450px
   border-radius: 15px
   margin-bottom: 20px
   margin-left: auto

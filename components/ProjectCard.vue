@@ -42,7 +42,7 @@
                 <v-col
                   xs="6"
                   sm="6"
-                  md="3"
+                  :md="techWidth(project)"
                   v-for="tech in project.techStack"
                   :key="tech.title"
                 >
@@ -120,6 +120,9 @@ export default {
         return false
       }
     },
+    techWidth(project) {
+      return (12 / project.techStack.length)
+    }
   },
 }
 </script>

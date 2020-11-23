@@ -74,5 +74,38 @@
                 "route": "https://chrome.google.com/webstore/detail/ui-component-creator/mlnbpchpagncgbmikclojpbibgjaindf?hl=en-US"
             }
         ]
+    },
+    {
+        "title": "Vermeshoeve - Alles Van Hout",
+        "content": "Static WordPress website for a woodworking company.",
+        "image": "vermeshoeve-logo.png",
+        "color": "#f7eee6",
+        "techStack": [
+            {
+                "title": "WordPress",
+                "img": "wordpress-logo.svg",
+                "alt": "WordPress Logo"
+            },
+            {
+                "title": "Photoshop",
+                "img": "adobe-photoshop-logo.svg",
+                "alt": "Photoshop Logo"
+            },
+            {
+                "title": "Yoast SEO",
+                "img": "yoast-logo.svg",
+                "alt": "Yoast Logo"
+            }
+        ],
+        "buttons": [
+            {
+                "title": "Learn More",
+                "route": "/vermeshoeve"
+            },
+            {
+                "title": "Visit Site",
+                "route": "http://www.vermeshoeve.nl/"
+            }
+        ]
     }
 ]
