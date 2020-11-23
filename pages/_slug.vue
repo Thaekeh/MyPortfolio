@@ -36,7 +36,7 @@
 
           </v-row>
           <v-row justify="center">
-            <v-col cols="8" xs="12" sm="8">
+            <v-col cols="12" md="8" lg="8" xl="8">
               <nuxt-content id="content" :document="page" />
             </v-col>
           </v-row>
