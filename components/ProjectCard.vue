@@ -12,7 +12,7 @@
           <v-card :color="project.color" id="inlayCard" height="100%">
             <v-container fluid fill-height>
               <v-col cols="12">
-                <v-img :src="project.image" id="inlayImage"></v-img>
+                <v-img :src="project.image" id="inlayImage" eager></v-img>
               </v-col>
             </v-container>
           </v-card>
@@ -55,7 +55,7 @@
                 <nuxt-link :to="project.buttons[0].route">
                   <v-btn text outlined>{{ project.buttons[0].title }}</v-btn>
                 </nuxt-link>
-                <v-btn text :href="project.buttons[1].route" target="_blank">{{
+                <v-btn text :href="project.buttons[1].route" target="_blank" v-if="project.buttons.length > 1">{{
                   project.buttons[1].title
                 }}</v-btn>
               </v-card-actions>
