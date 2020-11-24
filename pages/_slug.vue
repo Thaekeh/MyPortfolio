@@ -111,7 +111,4 @@ export default {
   font-weight: bold
   margin-left: 10px
   margin-right: 10px
-
-.nuxt-content #link
-  color: black
 </style>
