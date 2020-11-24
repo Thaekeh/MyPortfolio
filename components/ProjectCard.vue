@@ -94,7 +94,6 @@ export default {
       .then((json) => {
         this.projects = json
       })
-    console.log(this.projects)
   },
   computed: {
     fontSize() {

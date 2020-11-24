@@ -332,10 +332,13 @@ export default {
       if (this.$refs.form.validate()) {
         try {
           emailjs.sendForm(
-            'service_duzp5pe',
-            'template_qkbktna',
+            // 'service_duzp5pe',
+            // 'template_qkbktna',
+            process.env.EMAILJS_SERVICE_KEY,
+            process.env.EMAILJS_TEMPLATE_KEY,
             e.target,
-            'user_HkCjUmtgKD8JTx2Jgqkux',
+            // 'user_HkCjUmtgKD8JTx2Jgqkux',
+            process.env.EMAILJS_TARGET_KEY,
             {
               name: this.name,
               email: this.email,
@@ -349,7 +352,6 @@ export default {
           this.message = ''
           this.$refs.form.resetValidation()
         } catch (error) {
-          console.log({ error })
         }
       }
     },
@@ -359,7 +361,6 @@ export default {
       setTimeout(function () {
         self.loading = false
         self.snackbar = true
-        console.log('working')
       }, 2000)
     },
   },
