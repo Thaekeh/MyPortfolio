@@ -13,14 +13,17 @@
         loop: false,
       }"
     >
-      <v-toolbar-title id="toolbarTitle" @click="goTo('top')"
+      <!-- <v-toolbar-title id="toolbarTitle" @click="goTo('top')"
+        >Thaeke Hekkenberg</v-toolbar-title
+      > -->
+      <v-toolbar-title id="toolbarTitle" v-scroll-to="'#top'"
         >Thaeke Hekkenberg</v-toolbar-title
       >
       <v-spacer></v-spacer>
       <span class="hidden-sm-and-down">
-        <v-btn text class="navbarLink" @click="goTo('work')"> Work </v-btn>
-        <v-btn text class="navbarLink" @click="goTo('about')"> About Me </v-btn>
-        <v-btn text class="navbarLink" @click="goTo('contact')">
+        <v-btn text class="navbarLink" @click="goTo('#work')"> Work </v-btn>
+        <v-btn text class="navbarLink" @click="goTo('#about')"> About Me </v-btn>
+        <v-btn text class="navbarLink" @click="goTo('#contact')">
           Contact
         </v-btn>
       </span>
@@ -31,16 +34,16 @@
     </v-app-bar>
     <v-overlay v-model="drawer" id="menuOverlay" opacity="0.8">
       <v-list id="list">
-        <v-list-item class="menuListItem" @click="goTo('top')">
+        <v-list-item class="menuListItem" @click="goTo('#top')">
           Home
         </v-list-item>
-        <v-list-item class="menuListItem" @click="goTo('work')">
+        <v-list-item class="menuListItem" @click="goTo('#work')">
           Work
         </v-list-item>
-        <v-list-item class="menuListItem" @click="goTo('about')">
+        <v-list-item class="menuListItem" @click="goTo('#about')">
           About
         </v-list-item>
-        <v-list-item class="menuListItem" @click="goTo('contact')">
+        <v-list-item class="menuListItem" @click="goTo('#contact')">
           Contact
         </v-list-item>
         <v-list-item class="menuListItem"> </v-list-item>
@@ -78,6 +81,8 @@
 </template>
 
 <script>
+var VueScrollTo = require('vue-scrollto')
+
 export default {
   data() {
     return {
@@ -87,11 +92,15 @@ export default {
   methods: {
     goTo(goal) {
       if (!this.$route.params.slug) {
-        this.$router.push('#' + goal)
+        VueScrollTo.scrollTo(goal, 700)
       } else {
-        this.$router.push({ path: `/#${goal}` })
+        this.$router.push({ path: `/` })
+        setTimeout(() => {  VueScrollTo.scrollTo(goal, 700); }, 1000);
       }
       this.drawer = false
+    },
+    scroll(goal) {
+      VueScrollTo.scrollTo(goal, 700)
     },
   },
 }

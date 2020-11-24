@@ -134,7 +134,7 @@
           <v-col cols="12">
             <h1 id="mainTitle">Hey there!</h1>
             <h2 id="subTitle">I'm Thaeke, and I'm a front-end developer.</h2>
-            <v-btn text large id="learnMore" @click="goTo('work')">
+            <v-btn text large id="learnMore" v-scroll-to="{el: '#work', offset: -100}">
               Check Out My Work
             </v-btn>
           </v-col>
@@ -156,85 +156,9 @@
 
     <v-row justify="center" align="center">
       <v-col xs="12" sm="12" md="10" lg="8" id="itemColumn">
-          <!-- <v-card id="greatCard" hover>
-            <v-row>
-              <v-col xs="12" sm="6" md="6" id="inlayColumn">
-                <v-card color="#2878EA" id="inlayCard" height="100%">
-                  <v-container fluid fill-height>
-                    <v-col cols="12">
-                      <v-img
-                        src="brainLogoExample-Cropped.png"
-                        class="inlayImage"
-                        id="ttbInlayImage"
-                      ></v-img>
-                    </v-col>
-                  </v-container>
-                </v-card>
-              </v-col>
 
-              <v-col xs="6" sm="6" md="6">
-                <v-card-title
-                  class="justify-center projectCardTitle"
-                  :style="{ fontSize: fontSize + 'px' }"
-                  >A webapp for autodidacts</v-card-title
-                >
-                <v-card-text class="text-center">
-                  <v-row>
-                    <v-col
-                      xs="12"
-                      sm="10"
-                      md="8"
-                      id="cardTextCol"
-                      :style="{ fontSize: fontSize * 0.7 + 'px' }"
-                    >
-                      Learn anything you want by reading and quickly adding
-                      difficult words to your flashcards.
-                    </v-col>
-                  </v-row>
-                  <v-col cols="12" id="techStack">
-                    <h2>Tech Stack</h2>
-                    <v-row id="techStackLogos">
-                      <v-col xs="6" sm="6" md="3">
-                        <img
-                          src="vuetify-logo.svg"
-                          alt="Vuetify"
-                          height="50px"
-                        />
-                        <p>Vuetify</p>
-                      </v-col>
-                      <v-col xs="6" sm="6" md="3">
-                        <img src="vueLogo.jpeg" alt="Vue.js" height="50px" />
-                        <p>Vue.js</p>
-                      </v-col>
-                      <v-col xs="6" sm="6" md="3">
-                        <img src="nuxtjs.png" alt="Vuetify" height="50px" />
-                        <p>Nuxt.js</p>
-                      </v-col>
-                      <v-col xs="6" sm="6" md="3">
-                        <img src="firebaseLogo.png" alt="PWA" height="50px" />
-                        <p>Firebase</p>
-                      </v-col>
-                    </v-row>
-
-                    <v-card-actions class="justify-center" id="cardActions">
-                      <nuxt-link to="/trainthatbrain">
-                        <v-btn text outlined> Learn More</v-btn>
-                      </nuxt-link>
-                      <v-btn
-                        text
-                        href="https://www.trainthatbrain.app/"
-                        target="_blank"
-                        >Visit Site</v-btn
-                      >
-                    </v-card-actions>
-                  </v-col>
-                </v-card-text>
-              </v-col>
-            </v-row>
-          </v-card> -->
-
-          <project-card></project-card>
-        
+        <!-- Projects -->
+        <project-card></project-card>
 
         <!-- About Me Title -->
         <v-row justify="center" id="aboutTitle">
@@ -242,46 +166,43 @@
         </v-row>
         <v-row justify="center">
           <v-col xs="6" sm="10" md="12" lg="10">
-            
-              <v-card>
-                <v-card-title class="justify-center"> Who am I? </v-card-title>
-                <v-card-text class="text-center">
-                  <v-avatar size="300px" id="avatar">
-                    <img src="profilepicture.jpg" />
-                  </v-avatar>
-                  <p id="aboutMeParagraph">
-                    Hey there! My name is Thaeke, and I’m from the
-                    Netherlands.<br />
-                    I was born in 1997 on a farm in the Noordoostpolder. <br />
-                    I’m obsessed with learning from a broad variety of subjects.
-                    <br /><br />
-                    My main passions are the environment, computer science and
-                    software development, philosophy, and psychology. <br />
-                    I am doing a parttime Bachelor in Environmental Sciences at
-                    the Open University in the Netherlands.<br /><br />
-                    Creating things and coming up with new projects to work on
-                    is something I thoroughly enjoy.<br />
-                    Which is one of the reasons I have started developing as a
-                    front-end web developer.<br /><br />
-                    Three years ago, I started learning HTML and CSS, and
-                    started making some WordPress websites.<br />
-                    Then I started seeing the necessity of JavaScript and some
-                    of its frameworks for quality front-end web development.<br />
-                    While I started learning vanilla JavaScript, I was looking
-                    forward to learning some of the JS frameworks.<br /><br />
-                    After making some things with JS, and solving a bunch of
-                    problems on Code Academy, I was finally ready to learn a JS
-                    framework.<br />
-                    I chose Vue.js as my first JS framework because it seemed
-                    very powerful and had a short learning curve.<br />
-                    This meant I could start playing around and building my own
-                    apps.<br />
-                    I've learned a lot in the last years, and I'm excited to
-                    learn more!
-                  </p>
-                </v-card-text>
-              </v-card>
-            
+            <v-card>
+              <v-card-title class="justify-center"> Who am I? </v-card-title>
+              <v-card-text class="text-center">
+                <v-avatar size="300px" id="avatar">
+                  <v-img src="profilepicture.jpg"></v-img>
+                </v-avatar>
+                <p id="aboutMeParagraph">
+                  Hey there! My name is Thaeke, and I’m from the Netherlands.<br />
+                  I was born in 1997 on a farm in the Noordoostpolder. <br />
+                  I’m obsessed with learning from a broad variety of subjects.
+                  <br /><br />
+                  My main passions are the environment, computer science and
+                  software development, philosophy, and psychology. <br />
+                  I am doing a parttime Bachelor in Environmental Sciences at
+                  the Open University in the Netherlands.<br /><br />
+                  Creating things and coming up with new projects to work on is
+                  something I thoroughly enjoy.<br />
+                  Which is one of the reasons I have started developing as a
+                  front-end web developer.<br /><br />
+                  Three years ago, I started learning HTML and CSS, and started
+                  making some WordPress websites.<br />
+                  Then I started seeing the necessity of JavaScript and some of
+                  its frameworks for quality front-end web development.<br />
+                  While I started learning vanilla JavaScript, I was looking
+                  forward to learning some of the JS frameworks.<br /><br />
+                  After making some things with JS, and solving a bunch of
+                  problems on Code Academy, I was finally ready to learn a JS
+                  framework.<br />
+                  I chose Vue.js as my first JS framework because it seemed very
+                  powerful and had a short learning curve.<br />
+                  This meant I could start playing around and building my own
+                  apps.<br />
+                  I've learned a lot in the last years, and I'm excited to learn
+                  more!
+                </p>
+              </v-card-text>
+            </v-card>
           </v-col>
         </v-row>
         <v-row justify="center" id="contactTitle">
@@ -289,57 +210,55 @@
         </v-row>
         <v-row justify="center">
           <v-col xs="8" sm="6" md="10">
-            
-              <v-card>
-                <v-card-title>
-                  <h2 id="contactFormTitle">Send me a message!</h2>
-                </v-card-title>
-                <v-row justify="center">
-                  <v-col xs="10" sm="6" md="6">
-                    <v-form
-                      id="contactForm"
-                      ref="form"
-                      @submit.prevent="sendEmail"
-                    >
-                      <v-text-field
-                        name="name"
-                        label="Name"
-                        v-model="name"
-                        color="secondary"
-                        :rules="nameRules"
-                      ></v-text-field>
-                      <v-text-field
-                        name="email"
-                        label="Email"
-                        v-model="email"
-                        color="secondary"
-                        :rules="emailRules"
-                      ></v-text-field>
-                      <v-textarea
-                        name="message"
-                        label="Message"
-                        v-model="message"
-                        color="secondary"
-                        :rules="messageRules"
-                      ></v-textarea>
-                      <v-card-actions class="justify-center">
-                        <v-btn
-                          text
-                          type="submit"
-                          value="Send"
-                          :loading="loading"
-                          :disabled="loading"
-                        >
-                          Send
-                          <v-icon right> mdi-send </v-icon>
-                        </v-btn>
-                      </v-card-actions>
-                    </v-form>
-                    <form></form>
-                  </v-col>
-                </v-row>
-              </v-card>
-            
+            <v-card>
+              <v-card-title>
+                <h2 id="contactFormTitle">Send me a message!</h2>
+              </v-card-title>
+              <v-row justify="center">
+                <v-col xs="10" sm="6" md="6">
+                  <v-form
+                    id="contactForm"
+                    ref="form"
+                    @submit.prevent="sendEmail"
+                  >
+                    <v-text-field
+                      name="name"
+                      label="Name"
+                      v-model="name"
+                      color="secondary"
+                      :rules="nameRules"
+                    ></v-text-field>
+                    <v-text-field
+                      name="email"
+                      label="Email"
+                      v-model="email"
+                      color="secondary"
+                      :rules="emailRules"
+                    ></v-text-field>
+                    <v-textarea
+                      name="message"
+                      label="Message"
+                      v-model="message"
+                      color="secondary"
+                      :rules="messageRules"
+                    ></v-textarea>
+                    <v-card-actions class="justify-center">
+                      <v-btn
+                        text
+                        type="submit"
+                        value="Send"
+                        :loading="loading"
+                        :disabled="loading"
+                      >
+                        Send
+                        <v-icon right> mdi-send </v-icon>
+                      </v-btn>
+                    </v-card-actions>
+                  </v-form>
+                  <form></form>
+                </v-col>
+              </v-row>
+            </v-card>
           </v-col>
         </v-row>
       </v-col>

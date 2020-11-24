@@ -43,6 +43,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    ['vue-scrollto/nuxt', {offset: -100}],
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
