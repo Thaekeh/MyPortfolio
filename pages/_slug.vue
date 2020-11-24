@@ -27,10 +27,9 @@
                   :key="link.id"
                   :class="{ toc2: link.depth === 2, toc3: link.depth === 3 }"
                   class="listItem"
+                  v-scroll-to="{el: `#${link.id}`, offset: -100}"
                 >
-                  <NuxtLink :to="`#${link.id}`" id="tableOfContents">{{ link.index }}{{
-                    link.text
-                  }}</NuxtLink>
+                  <p id="listItemContent">{{ link.text }}</p>
                 </v-list-item>
               </v-list>
 
@@ -106,6 +105,14 @@ export default {
 #listTitle
   margin-left: auto
   margin-right: auto
+
+#listItemContent
+  margin-left: auto
+  margin-right: auto
+  text-decoration: underline
+
+#listItemContent:hover
+  cursor: pointer
 
 #bullet
   font-weight: bold
