@@ -16,7 +16,7 @@
       <!-- <v-toolbar-title id="toolbarTitle" @click="goTo('top')"
         >Thaeke Hekkenberg</v-toolbar-title
       > -->
-      <v-toolbar-title id="toolbarTitle" v-scroll-to="'#top'"
+      <v-toolbar-title id="toolbarTitle" @click="goTo('#top')"
         >Thaeke Hekkenberg</v-toolbar-title
       >
       <v-spacer></v-spacer>

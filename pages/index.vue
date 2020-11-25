@@ -134,7 +134,12 @@
           <v-col cols="12">
             <h1 id="mainTitle">Hey there!</h1>
             <h2 id="subTitle">I'm Thaeke, and I'm a front-end developer.</h2>
-            <v-btn text large id="learnMore" v-scroll-to="{el: '#work', offset: -100}">
+            <v-btn
+              text
+              large
+              id="learnMore"
+              v-scroll-to="{ el: '#work', offset: -100 }"
+            >
               Check Out My Work
             </v-btn>
           </v-col>
@@ -156,7 +161,6 @@
 
     <v-row justify="center" align="center">
       <v-col xs="12" sm="12" md="10" lg="8" id="itemColumn">
-
         <!-- Projects -->
         <project-card></project-card>
 
@@ -199,9 +203,18 @@
                   This meant I could start playing around and building my own
                   apps.<br />
                   I've learned a lot in the last years, and I'm excited to learn
-                  more!
+                  more! <br />
+                  <br />
+                  <strong>You can find me on the following platforms:</strong>
                 </p>
               </v-card-text>
+              <v-card-actions>
+                <v-row justify="center">
+                  <v-col cols="6">
+                    <social-link></social-link>
+                  </v-col>
+                </v-row>
+              </v-card-actions>
             </v-card>
           </v-col>
         </v-row>
@@ -209,13 +222,13 @@
           <h1 id="contact">Contact Me</h1>
         </v-row>
         <v-row justify="center">
-          <v-col xs="8" sm="6" md="10">
+          <v-col xs="8" sm="10" md="12" lg="10">
             <v-card>
               <v-card-title>
                 <h2 id="contactFormTitle">Send me a message!</h2>
               </v-card-title>
               <v-row justify="center">
-                <v-col xs="10" sm="6" md="6">
+                <v-col xs="8" sm="8" md="6">
                   <v-form
                     id="contactForm"
                     ref="form"
@@ -274,6 +287,7 @@
 <script>
 import emailjs from 'emailjs-com'
 import ProjectCard from '@/components/ProjectCard'
+import SocialLink from '@/components/SocialLink'
 
 export default {
   head: {
@@ -332,13 +346,10 @@ export default {
       if (this.$refs.form.validate()) {
         try {
           emailjs.sendForm(
-            // 'service_duzp5pe',
-            // 'template_qkbktna',
-            process.env.EMAILJS_SERVICE_KEY,
-            process.env.EMAILJS_TEMPLATE_KEY,
+            'service_duzp5pe',
+            'template_qkbktna',
             e.target,
-            // 'user_HkCjUmtgKD8JTx2Jgqkux',
-            process.env.EMAILJS_TARGET_KEY,
+            'user_HkCjUmtgKD8JTx2Jgqkux',
             {
               name: this.name,
               email: this.email,
@@ -351,8 +362,7 @@ export default {
           this.email = ''
           this.message = ''
           this.$refs.form.resetValidation()
-        } catch (error) {
-        }
+        } catch (error) {}
       }
     },
     setLoader() {

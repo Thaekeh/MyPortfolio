@@ -24,6 +24,7 @@
             :style="{ fontSize: fontSize + 'px' }"
             >{{ project.title }}</v-card-title
           >
+          <v-card-subtitle v-if="project.subtitle" class="text-center">{{ project.subtitle }}</v-card-subtitle>
           <v-card-text class="text-center">
             <v-row>
               <v-col
@@ -99,15 +100,15 @@ export default {
     fontSize() {
       switch (this.$vuetify.breakpoint.name) {
         case 'xs':
-          return 18
+          return 16
         case 'sm':
-          return 17
+          return 16
         case 'md':
-          return 22
+          return 20
         case 'lg':
-          return 26
+          return 22
         case 'xl':
-          return 30
+          return 24
       }
     },
   },

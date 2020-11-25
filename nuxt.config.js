@@ -37,12 +37,12 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    // dotenv module
-    '@nuxtjs/dotenv'
   ],
-
+  
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    // dotenv module
+    '@nuxtjs/dotenv',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content

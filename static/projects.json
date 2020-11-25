@@ -110,7 +110,8 @@
         ]
     },
     {
-        "title": "Vermeshoeve - Alles Van Hout",
+        "title": "Vermeshoeve",
+        "subtitle": "Alles Van Hout",
         "content": "Static WordPress website for a woodworking company.",
         "image": "vermeshoeve-logo.png",
         "color": "#f7eee6",
