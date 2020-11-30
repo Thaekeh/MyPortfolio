@@ -24,7 +24,8 @@
             <v-btn
               class="navbarIcon"
               icon
-              to="https://github.com/Thaekeh"
+              href="https://github.com/Thaekeh"
+              target="_blank"
               v-bind="attrs"
               v-on="on"
             >
@@ -38,7 +39,8 @@
             <v-btn
               class="navbarIcon"
               icon
-              to="https://stackoverflow.com/users/14109713/thaeke-hekkenberg"
+              href="https://stackoverflow.com/users/14109713/thaeke-hekkenberg"
+              target="_blank"
               v-bind="attrs"
               v-on="on"
             >
@@ -52,7 +54,8 @@
             <v-btn
               class="navbarIcon"
               icon
-              to="https://www.linkedin.com/in/thaeke-hekkenberg"
+              href="https://www.linkedin.com/in/thaeke-hekkenberg"
+              target="_blank"
               v-bind="attrs"
               v-on="on"
             >
