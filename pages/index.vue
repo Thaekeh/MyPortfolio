@@ -155,14 +155,14 @@
         marginTop: this.$vuetify.breakpoint.xs ? '20vh' : '40vh',
         marginBottom: '30px',
       }"
+      v-anime="{
+        opacity: 1,
+        duration: 2000,
+        delay: 1000,
+        loop: false,
+      }"
     >
-      <h1 v-anime="{
-          translateY: 100,
-          opacity: 1,
-          duration: 2000,
-          delay: 1000,
-          loop: false,
-        }" id="work">My Work</h1>
+      <h1 id="work">My Work</h1>
     </v-row>
 
     <v-row justify="center" align="center">
@@ -210,7 +210,59 @@
                   apps.<br />
                   I've learned a lot in the last years, and I'm excited to learn
                   more! <br />
+                  <br />
+                  You can learn more about me on these platforms:
                 </p>
+                <div class="socials">
+                  <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn
+                        class="socialIcon"
+                        icon
+                        href="https://github.com/Thaekeh"
+                        target="_blank"
+                        v-bind="attrs"
+                        v-on="on"
+                        large
+                      >
+                        <v-icon large>mdi-github</v-icon>
+                      </v-btn>
+                    </template>
+                    <span>Github</span>
+                  </v-tooltip>
+                  <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn
+                        class="socialIcon"
+                        icon
+                        href="https://stackoverflow.com/users/14109713/thaeke-hekkenberg"
+                        target="_blank"
+                        v-bind="attrs"
+                        v-on="on"
+                        large
+                      >
+                        <v-icon large>mdi-stack-overflow</v-icon>
+                      </v-btn>
+                    </template>
+                    <span>Stack Overflow</span>
+                  </v-tooltip>
+                  <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn
+                        class="socialIcon"
+                        icon
+                        href="https://www.linkedin.com/in/thaeke-hekkenberg"
+                        target="_blank"
+                        v-bind="attrs"
+                        v-on="on"
+                        large
+                      >
+                        <v-icon large>mdi-linkedin</v-icon>
+                      </v-btn>
+                    </template>
+                    <span>LinkedIn</span>
+                  </v-tooltip>
+                </div>
               </v-card-text>
             </v-card>
           </v-col>
@@ -373,154 +425,228 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.bounceInUp-enter-active
-  animation: bounceInUp .8s
+<style lang="scss" scoped>
+.bounceInUp-enter-active {
+  animation: bounceInUp 0.8s;
+}
 
-.bounceInUp-leave-active
-  animation: bounceInUp .5s
+.bounceInUp-leave-active {
+  animation: bounceInUp 0.5s;
+}
 
-#home
-  margin-top: 15vh
+#home {
+  margin-top: 15vh;
+}
 
-#mainTitle
-  font-size: 3rem
-  font-weight: 500
+#mainTitle {
+  font-size: 3rem;
+  font-weight: 500;
+}
 
-#subTitle
-  font-size: 2rem
-  font-weight: 400
+#subTitle {
+  font-size: 2rem;
+  font-weight: 400;
+}
 
-#learnMore
-  margin-top: 40px
+#learnMore {
+  margin-top: 40px;
+}
 
-#outlinedButtonText
-  font-size: 1.5rem
-  padding-top: 50px
+#outlinedButtonText {
+  font-size: 1.5rem;
+  padding-top: 50px;
+}
 
-#introCard
-  border-radius: 50px
+#introCard {
+  border-radius: 50px;
+}
 
-#introText
-  opacity: 0
+#introText {
+  opacity: 0;
+}
 
-.hoverCard
-  transition: opacity .4s ease-in-out
+#workTitle {
+  opacity: 0;
+}
 
-#hoverCard
-  border-radius: 20px
-  cursor: pointer
+.hoverCard {
+  transition: opacity 0.4s ease-in-out;
+}
 
-#greatCard
-  border-radius: 30px
-  margin-bottom: 200px
-  padding: 0
-  cursor: default !important
+#hoverCard {
+  border-radius: 20px;
+  cursor: pointer;
+}
 
-#itemColumn
-  padding: 0
+#greatCard {
+  border-radius: 30px;
+  margin-bottom: 200px;
+  padding: 0;
+  cursor: default !important;
+}
 
-#inlayColumn
-  padding: 0
+#itemColumn {
+  padding: 0;
+}
 
-#inlayCard
-  border-radius: 30px
+#inlayColumn {
+  padding: 0;
+}
 
-.inlayImage
-  border-radius: 30px
-  margin-top: auto
-  margin-bottom: auto
+#inlayCard {
+  border-radius: 30px;
+}
 
-#uiInlayImage
-  max-width: 60%
-  margin-left: auto
-  margin-right: auto
-  border-radius: 0
+.inlayImage {
+  border-radius: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
-#cardTextCol
-  margin: auto
+#uiInlayImage {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0;
+}
 
-.underlinedBottom
-  text-decoration: underline
+#cardTextCol {
+  margin: auto;
+}
 
-#aboutTitle
-  margin-top: 100px
+.underlinedBottom {
+  text-decoration: underline;
+}
 
-.techCard
-  position: absolute
-  display: flex
-  cursor: default !important
+#aboutTitle {
+  margin-top: 100px;
+}
 
-.techCardRow
-  padding: 20px 30px 20px 30px
+.techCard {
+  position: absolute;
+  display: flex;
+  cursor: default !important;
+}
 
-.techCardImage
-  margin-right: 30px
+.techCardRow {
+  padding: 20px 30px 20px 30px;
+}
 
-#firebaseCard
-  top: 35vh
-  opacity: 0
-  @media (max-width: 1400px)
-    left: 2vw
-  @media (min-width: 1400px)
-    left: 10vw
+.techCardImage {
+  margin-right: 30px;
+}
 
-#netlifyCard
-  right: 10vw
-  top: 35vh
-  opacity: 0
-  @media (max-width: 1400px)
-    right: 2vw
-  @media (min-width: 1400px)
-    right: 10vw
+#firebaseCard {
+  top: 35vh;
+  opacity: 0;
+}
+@media (max-width: 1400px) {
+  #firebaseCard {
+    left: 2vw;
+  }
+}
+@media (min-width: 1400px) {
+  #firebaseCard {
+    left: 10vw;
+  }
+}
 
-#vuetifyCard
-  top: 50vh
-  opacity: 0
-  @media (max-width: 1400px)
-    left: 17vw
-  @media (min-width: 1400px)
-    left: 25vw
+#netlifyCard {
+  right: 10vw;
+  top: 35vh;
+  opacity: 0;
+}
+@media (max-width: 1400px) {
+  #netlifyCard {
+    right: 2vw;
+  }
+}
+@media (min-width: 1400px) {
+  #netlifyCard {
+    right: 10vw;
+  }
+}
 
-#nuxtCard
-  right: 25vw
-  top: 50vh
-  opacity: 0
-  @media (max-width: 1400px)
-    right: 17vw
-  @media (min-width: 1400px)
-    right: 25vw
+#vuetifyCard {
+  top: 50vh;
+  opacity: 0;
+}
+@media (max-width: 1400px) {
+  #vuetifyCard {
+    left: 17vw;
+  }
+}
+@media (min-width: 1400px) {
+  #vuetifyCard {
+    left: 25vw;
+  }
+}
 
-#vueCard
-  top: 65vh
-  opacity: 0
+#nuxtCard {
+  right: 25vw;
+  top: 50vh;
+  opacity: 0;
+}
+@media (max-width: 1400px) {
+  #nuxtCard {
+    right: 17vw;
+  }
+}
+@media (min-width: 1400px) {
+  #nuxtCard {
+    right: 25vw;
+  }
+}
 
-#work
-  margin-top: 150px
-  opacity: 0
+#vueCard {
+  top: 65vh;
+  opacity: 0;
+}
 
-#about
-  margin-top: 160px
+#work {
+  margin-top: 150px;
+}
 
-#contact
-  margin-top: 160px
+#about {
+  margin-top: 160px;
+}
 
-.projectCardTitle
-  font-weight: 600
+#contact {
+  margin-top: 160px;
+}
 
-#contactFormTitle
-  margin-left: auto
-  margin-right: auto
-  font-size: 24px
+.projectCardTitle {
+  font-weight: 600;
+}
 
-#aboutMeParagraph
-  font-size: 16px
+#contactFormTitle {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+}
 
-#avatar
-  margin-bottom: 30px
+#aboutMeParagraph {
+  font-size: 16px;
+}
 
-#snackbarContent
-  color: white
-  font-weight: 500
-  font-size: 18px
+#avatar {
+  margin-bottom: 30px;
+}
+
+#snackbarContent {
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.socialIcon {
+  margin: 0 10px;
+  opacity: 0.6;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+  }
+}
 </style>
