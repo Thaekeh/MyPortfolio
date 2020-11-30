@@ -210,17 +210,8 @@
                   apps.<br />
                   I've learned a lot in the last years, and I'm excited to learn
                   more! <br />
-                  <br />
-                  <strong>You can find me on the following platforms:</strong>
                 </p>
               </v-card-text>
-              <v-card-actions>
-                <v-row justify="center">
-                  <v-col cols="6">
-                    <social-link></social-link>
-                  </v-col>
-                </v-row>
-              </v-card-actions>
             </v-card>
           </v-col>
         </v-row>
@@ -293,7 +284,6 @@
 <script>
 import emailjs from 'emailjs-com'
 import ProjectCard from '@/components/ProjectCard'
-import SocialLink from '@/components/SocialLink'
 
 export default {
   head: {
