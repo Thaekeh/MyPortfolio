@@ -507,6 +507,7 @@ export default {
 
 #work
   margin-top: 150px
+  opacity: 0
 
 #about
   margin-top: 160px
