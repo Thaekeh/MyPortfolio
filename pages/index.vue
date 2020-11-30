@@ -156,7 +156,13 @@
         marginBottom: '30px',
       }"
     >
-      <h1 id="work">My Work</h1>
+      <h1 v-anime="{
+          translateY: 100,
+          opacity: 1,
+          duration: 2000,
+          delay: 1000,
+          loop: false,
+        }" id="work">My Work</h1>
     </v-row>
 
     <v-row justify="center" align="center">
